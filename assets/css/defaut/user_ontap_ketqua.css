@@ -1,0 +1,184 @@
+* {
+    box-sizing: border-box;
+}
+
+#main #hoanthanhontap {
+    width: 100%;
+    height: 1rem;
+    background-color: #2F80ED;
+    border-radius: 0.625rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(47, 128, 237, 0.3);
+    margin-bottom: 0.75rem;
+}
+
+@keyframes progressComplete {
+    from {
+        width: 0%;
+        opacity: 0.5;
+    }
+    to {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+#main #chucmung {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 43.75rem;
+    padding: 1.25rem 1.5rem;
+    background: #ffffff;
+    border: 0.125rem solid #2F80ED;
+    border-radius: 1.25rem;
+    margin: 0.5rem auto 0.75rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.08);
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#chucmung #thongbaohoanthanh {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #2F80ED;
+    margin-bottom: 0.25rem;
+}
+
+#chucmung #khen {
+    margin-bottom: 0;
+    font-size: 1rem;
+    color: #6B7280;
+    font-weight: 500;
+    font-style: italic;
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-1rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#frame_hanhdong {
+    margin: 0.75rem auto 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#frame_hanhdong > p {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: #1F2937;
+}
+
+.hanhdong_tieptheo{
+    display: flex;
+    flex-direction: row;
+    gap: 1.75rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.hanhdong_tieptheo .hanhdong {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 0;
+    color: #374151;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.hanhdong_tieptheo .hanhdong:hover {
+    transform: translateY(-0.25rem);
+    color: #2F80ED;
+}
+
+.hanhdong_tieptheo .hanhdong:hover i {
+    background-color: #2F80ED;
+    color: white;
+    box-shadow: 0 0.25rem 0.5rem rgba(47, 128, 237, 0.2);
+}
+
+.hanhdong_tieptheo .hanhdong:active {
+    transform: translateY(0);
+}
+
+.hanhdong i {
+    font-size: 1.25rem;
+    width: 3rem;
+    height: 3rem;
+    background-color: #F3F4F6;
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+    border-radius: 1rem;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.08);
+}
+
+.hanhdong p {
+    font-weight: 600 !important;
+    margin: 0;
+    transition: all 0.3s ease;
+}
+a {
+    text-decoration: none;
+}
+
+/* Responsive cho màn hình nhỏ */
+@media (max-width: 48rem) { /* 768px */
+    #chucmung {
+        padding: 1.25rem;
+        margin: 1.25rem auto;
+    }
+    #chucmung #thongbaohoanthanh {
+        font-size: 2rem;
+    }
+    #chucmung #khen {
+        font-size: 1.75rem;
+    }
+    #frame_hanhdong > p {
+        font-size: 1.75rem;
+    }
+    .hanhdong_tieptheo {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .hanhdong i {
+        width: 4rem;
+        height: 4rem;
+        font-size: 1.75rem;
+    }
+    .hanhdong_tieptheo .hanhdong {
+        font-size: 1.125rem;
+    }
+}

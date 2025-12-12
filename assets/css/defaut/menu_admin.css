@@ -1,0 +1,215 @@
+/* --- 1. SETUP BODY --- */
+
+body#app-container {
+    display: flex;
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    background-color: #F5F7FA;
+    font-size: 14px;
+    overflow-x: hidden;
+    /* Chặn thanh cuộn ngang của toàn trang */
+}
+
+
+/* --- 2. MENU SIDEBAR --- */
+
+#placeholder-menu {
+    width: 250px;
+    background: #fff;
+    border-right: 1px solid #E0E0E0;
+    flex-shrink: 0;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+
+/* === COLLAPSED STATE (KHI ẨN MENU) === */
+
+body.menu-collapsed #placeholder-menu {
+    width: 64px !important;
+}
+
+
+/* Ẩn chữ */
+
+body.menu-collapsed .menu-item span,
+body.menu-collapsed #logo p,
+body.menu-collapsed #logout span {
+    display: none !important;
+    opacity: 0;
+}
+
+
+/* Căn giữa icon */
+
+body.menu-collapsed #menu_admin #logo,
+body.menu-collapsed .menu-item a,
+body.menu-collapsed #logout a {
+    justify-content: center !important;
+    padding: 0 !important;
+}
+
+body.menu-collapsed .menu-item a i,
+body.menu-collapsed #logout a i {
+    margin-right: 0 !important;
+}
+
+
+/* Mở rộng nội dung chính */
+
+body.menu-collapsed .main-wrapper {
+    width: calc(100% - 64px) !important;
+}
+
+
+/* ===================================== */
+
+
+/* --- 3. WRAPPER NỘI DUNG --- */
+
+.main-wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    /* QUAN TRỌNG: width phải tính toán trừ đi menu */
+    width: calc(100% - 250px);
+    transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    /* QUAN TRỌNG: Ngăn Grid bên trong phá vỡ Flexbox */
+    min-width: 0;
+}
+
+
+/* --- 4. CÁC THÀNH PHẦN CON MENU (Giữ nguyên style đẹp) --- */
+
+#menu_admin {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#menu_admin #logo {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    border-bottom: 1px solid #f0f0f0;
+    gap: 12px;
+}
+
+#menu_admin #logo p {
+    font-weight: 700;
+    font-size: 18px;
+    color: #5B9BD5;
+    margin: 0;
+}
+
+#menu_admin #logo svg {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+}
+
+#frame_menu {
+    padding: 15px 10px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.menu-item a,
+#logout a {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-size: 14px;
+    border-radius: 6px;
+    height: 40px;
+    transition: all 0.2s;
+    box-sizing: border-box;
+}
+
+
+.menu-item a.active {
+    background-color: #7BB7EE;
+    color: #ffffff;
+}
+
+.menu-item a i,
+#logout a i {
+    font-size: 18px;
+    width: 24px;
+    text-align: center;
+    margin-right: 12px;
+    color: Black;
+    flex-shrink: 0;
+    transition: margin 0.3s;
+}
+
+.menu-item a.active i {
+    color: #ffffff;
+}
+#logout {
+    padding: 10px;
+    margin-top: auto;
+    border-top: 1px solid #f0f0f0;
+}
+
+
+/* Class điều khiển trạng thái thu gọn */
+
+body.menu-collapsed #placeholder-menu {
+    width: 64px !important;
+}
+
+
+/* Ẩn chữ và mũi tên khi thu gọn */
+
+body.menu-collapsed .menu-item span,
+body.menu-collapsed #logo p,
+body.menu-collapsed #logout span {
+    opacity: 0;
+    pointer-events: none;
+    /* Ngăn bấm vào chữ khi đang ẩn */
+    display: none;
+    /* Ẩn hoàn toàn để không chiếm chỗ */
+}
+
+
+/* Căn giữa icon khi menu nhỏ */
+
+body.menu-collapsed #menu_admin #logo,
+body.menu-collapsed .menu-item a,
+body.menu-collapsed #logout a {
+    justify-content: center !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+body.menu-collapsed .menu-item a i,
+body.menu-collapsed #logout a i {
+    margin-right: 0 !important;
+}
+
+
+/* Mở rộng phần nội dung chính khi menu thu nhỏ */
+
+body.menu-collapsed .main-wrapper {
+    width: calc(100% - 64px) !important;
+}
+
+
+/* Hiệu ứng bóng đổ cho menu để tách biệt */
+
+#placeholder-menu {
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+}

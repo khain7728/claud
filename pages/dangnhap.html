@@ -1,0 +1,144 @@
+<!-- trang dang nhap -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/defaut/index.css">
+    <link rel="stylesheet" href="../assets/css/defaut/body.css">
+    <link rel="stylesheet" href="../assets/css/defaut/dangnhap.css">
+    <link rel="stylesheet" href="../assets/css/defaut/forgot-password-modal.css">
+    <link rel="stylesheet" href="../assets/css/defaut/toast-message.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Đăng nhập - VOCAB</title>
+</head>
+
+<body>
+    <!-- header -->
+    <div id="header_index"></div>
+
+    <div id="content">
+        <!-- Toast Message Container -->
+        <div id="toast-container" class="toast-container"></div>
+        
+        <div class="login-container">
+            <h2>Đăng nhập</h2>
+            <p>Chào mừng quay lại! Hãy đăng nhập vào tài khoản của bạn.</p>
+
+            <!-- đăng nhập bằng facebook -->
+            <button class="facebook-login-button" onclick="window.location.href='../auth/facebook-login.php'">
+                <i class="fa-brands fa-facebook"></i>
+                Đăng nhập với Facebook
+            </button>
+            <!-- Đăng nhập bằng google -->
+            <button class="google-login-button" onclick="window.location.href='../auth/google-login.php'">
+                <i class="fa-brands fa-google"></i>
+                Đăng nhập với Google
+            </button>
+            <div class="divider">
+                <div class="line-left"></div>
+                <span>Hoặc tiếp tục với email</span>
+                <div class="line-right"></div>
+            </div>
+            <!-- nhập email & mật khẩu -->
+            <form id="loginForm">
+                <div class="input-group">
+                    <div class="email">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Nhập email của bạn">
+                    </div>
+                    <div class="password">
+                        <label for="password">Mật khẩu</label>
+                        <input type="password" id="password" placeholder="Nhập mật khẩu của bạn">
+                    </div>
+                </div>
+                <a href="#" id="forgotPasswordLink" style="color: black">Quên mật khẩu?</a>
+                <!-- nút đăng nhập -->
+                <button type="button" class="login-button">Đăng nhập</button>
+            </form>
+
+            <p class="signup-link">Chưa có tài khoản? <a href="dangki.html">Đăng ký ngay</a></p>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div id="footer"></div>
+
+    <!-- MODAL QUÊN MẬT KHẨU -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="forgot-password-modal" id="forgotPasswordModal">
+        <!-- Header -->
+        <div class="modal-header">
+            <h2>Bạn quên mật khẩu ?</h2>
+            <p>Hãy điền thông tin dưới đây</p>
+            <button class="close-btn" id="closeModal">&times;</button>
+        </div>
+        
+        <!-- Body -->
+        <div class="modal-body">
+            <!-- BƯỚC 1: Nhập email -->
+            <div class="modal-step active" id="step1">
+                <div id="alertStep1"></div>
+                
+                <div class="modal-input-group">
+                    <label for="resetEmail">Nhập email của bạn</label>
+                    <input type="email" id="resetEmail" placeholder="Nhập email của bạn">
+                </div>
+                
+                <button class="modal-send-btn" id="sendCodeBtn">Gửi</button>
+            </div>
+
+            <!-- BƯỚC 2: Nhập code -->
+            <div class="modal-step" id="step2">
+                <p>Hãy điền thông tin dưới đây</p>
+                <div id="alertStep2"></div>
+                
+                <div class="modal-input-group">
+                    <label for="resetEmail2">Nhập email của bạn</label>
+                    <input type="email" id="resetEmail2" readonly style="background: #f9fafb;">
+                </div>
+                
+                <div class="modal-input-group code-input-container">
+                    <label for="resetCode">Nhập code</label>
+                    <input type="text" id="resetCode" placeholder="000000" maxlength="6" pattern="[0-9]{6}">
+                </div>
+                
+                <button class="modal-send-btn" id="verifyCodeBtn">Gửi</button>
+                <button class="modal-back-btn" id="backToStep1">Quay lại</button>
+                <p style="font-size: 13px; color: #666; margin-top: 12px;">
+                    Nếu bạn không nhận được code, hãy liên hệ với chúng tôi để được giúp đỡ
+                </p>
+            </div>
+
+            <!-- BƯỚC 3: Đặt lại mật khẩu -->
+            <div class="modal-step" id="step3">
+                <p>Nhập mật khẩu mới của bạn</p>
+                <div id="alertStep3"></div>
+                
+                <div class="modal-input-group">
+                    <label for="newPassword">Mật khẩu mới</label>
+                    <input type="password" id="newPassword" placeholder="Nhập mật khẩu mới">
+                    <small style="display: block; text-align: left; color: #666; margin-top: 4px; font-size: 12px;">
+                        Ít nhất 8 ký tự, chứa chữ hoa, chữ thường và số
+                    </small>
+                </div>
+                
+                <div class="modal-input-group">
+                    <label for="confirmPassword">Nhập lại mật khẩu mới</label>
+                    <input type="password" id="confirmPassword" placeholder="Nhập lại mật khẩu mới">
+                </div>
+                
+                <button class="modal-send-btn" id="resetPasswordBtn">Đặt lại mật khẩu</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/defaut/toast-message.js"></script>
+    <script src="../assets/js/defaut/include-layout.js" defer></script>
+    <script src="../assets/js/defaut/dangnhap.js" defer></script>
+    <script src="../assets/js/defaut/forgot-password-modal.js" defer></script>
+</body>
+
+</html>

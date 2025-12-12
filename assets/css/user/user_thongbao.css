@@ -1,0 +1,318 @@
+#notifications {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+#notif-trigger {
+  position: relative;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+#notif-trigger:hover {
+  background-color: rgba(123, 183, 238, 0.25);
+  transform: translateY(-0.15rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
+}
+#notif-trigger:focus-visible {
+  outline: 0.125rem solid #2f80ed;
+  outline-offset: 0.125rem;
+}
+#notif-trigger .fa-bell {
+  font-size: 1.5rem;
+  color: #2f80ed;
+}
+.notif-badge {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+  background: #ff4d4d;
+  color: #fff;
+  font-size: 0.75rem;
+  line-height: 1;
+  padding: 0.25rem 0.4rem;
+  border-radius: 999px;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+  font-weight: 600;
+}
+#notif-panel {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  width: 20rem;
+  max-height: 28rem;
+  background: #ffffff;
+  border: 0.0625rem solid #d6e9f9;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-0.5rem);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 50;
+}
+#notifications.open #notif-panel {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.notif-header {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #7bb7ee, #2f80ed);
+  color: #fff;
+}
+.notif-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  flex: 1;
+}
+.notif-list::-webkit-scrollbar {
+  width: 0.5rem;
+}
+.notif-list::-webkit-scrollbar-track {
+  background: #e8f3fc;
+}
+.notif-list::-webkit-scrollbar-thumb {
+  background: #7bb7ee;
+  border-radius: 0.5rem;
+}
+
+/* Restructured .notif-item layout - fixed duplicate conflicting rules */
+.notif-item {
+  display: flex;
+  flex-direction: row;
+  padding: 0.75rem 1rem;
+  border-bottom: 0.0625rem solid #f0f4f8;
+  background: #fff;
+  transition: background-color 0.25s ease;
+}
+.notif-item:last-child {
+  border-bottom: none;
+}
+.notif-item.unread {
+  background: #f1f9ff;
+}
+.notif-item:hover {
+  background: #e6f3ff;
+}
+
+/* Fixed .notif-content to flex row layout with proper alignment */
+.notif-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.notif-icon {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #7bb7ee, #2f80ed);
+  border-radius: 50%;
+  color: white;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+/* Restructured .notif-body to contain text and time vertically */
+.notif-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.notif-text {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #222;
+}
+
+/* Changed time to left alignment and removed text-align right */
+.notif-time {
+  font-size: 0.7rem;
+  color: #666;
+  letter-spacing: 0.5px;
+  text-align: left;
+}
+
+/* Delete button now always visible, centered vertically, on the right */
+.notif-delete-btn {
+  background: transparent;
+  border: none;
+  color: #999;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  transition: all 0.25s ease;
+  opacity: 1;
+  flex-shrink: 0;
+  align-self: center;
+  margin-left: auto;
+  margin-right: 0; /* ép sát phải */
+}
+
+.notif-item:hover .notif-delete-btn {
+  color: #ff4d4d;
+  background: #ffebee;
+}
+
+.notif-delete-btn:hover {
+  background: #ffebee;
+  color: #ff0000;
+}
+
+.notif-delete-btn:active {
+  transform: scale(0.95);
+}
+
+/* ============================================
+   NÚT "XEM THÊM" VÀ "XÓA TẤT CẢ"
+   ============================================ */
+.notif-footer {
+  padding: 0.75rem;
+  background: #fafcfe;
+  border-top: 0.0625rem solid #eef3f7;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.notif-load-more,
+.notif-delete-all {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.notif-load-more {
+  background: linear-gradient(135deg, #7bb7ee, #2f80ed);
+  color: white;
+}
+
+.notif-load-more:hover {
+  background: linear-gradient(135deg, #2f80ed, #1a5fb5);
+  transform: translateY(-0.125rem);
+  box-shadow: 0 0.25rem 0.75rem rgba(47, 128, 237, 0.3);
+}
+
+.notif-delete-all {
+  background: #f5f5f5;
+  color: #666;
+}
+
+.notif-delete-all:hover {
+  background: #ffebee;
+  color: #ff4d4d;
+}
+
+.notif-load-more:active,
+.notif-delete-all:active {
+  transform: translateY(0);
+}
+
+/* ============================================
+   LOADING INDICATOR
+   ============================================ */
+.notif-loading {
+  padding: 1rem;
+  text-align: center;
+  color: #2f80ed;
+  font-size: 0.85rem;
+  display: none;
+}
+
+.notif-loading i {
+  margin-right: 0.5rem;
+}
+
+/* ============================================
+   EMPTY STATE (KHÔNG CÓ THÔNG BÁO)
+   ============================================ */
+.notif-empty {
+  padding: 2rem 1rem !important;
+  text-align: center;
+  border: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.notif-empty .notif-text {
+  color: #999 !important;
+  font-size: 0.9rem;
+  margin: 0 !important;
+}
+
+.notif-empty i {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  opacity: 0.3;
+}
+
+/* ============================================
+   ANIMATION CHO XÓA THÔNG BÁO
+   ============================================ */
+.notif-item {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.notif-item.deleting {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 48rem) {
+  #notif-panel {
+    right: -2rem;
+    width: 18rem;
+  }
+
+  #notif-trigger .fa-bell {
+    font-size: 1.25rem;
+  }
+
+  .notif-badge {
+    font-size: 0.65rem;
+  }
+
+  .notif-delete-btn {
+    opacity: 1; /* Luôn hiển thị trên mobile */
+  }
+
+  .notif-icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    font-size: 0.8rem;
+  }
+}

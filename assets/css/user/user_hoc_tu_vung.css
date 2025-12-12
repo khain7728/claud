@@ -1,0 +1,286 @@
+/* Styles kế thừa từ body.css: *, #tieu_de_trang */
+/* #main - Container cho toàn bộ giao diện học flashcard */
+
+#content {
+    height: calc(100vh - 64px);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+}
+
+#tieu_de_trang {
+    flex-shrink: 0;
+    margin-bottom: 0.5rem;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0 2rem;
+    gap: 0.7rem;
+}
+
+.flashcard-progress {
+    width: 100%;
+    font-family: sans-serif;
+    flex-shrink: 0;
+}
+
+#soluongtuvung {
+    display: block;
+    text-align: right;
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#thanhsoluong {
+    width: 100%;
+    background-color: #D0E9FF;
+    border-radius: 0.625rem;
+    overflow: hidden;
+}
+
+#tongsoluong {
+    width: 100%;
+    height: 1rem;
+    position: relative;
+}
+
+#soluonghientai {
+    width: 5%;
+    height: 100%;
+    background: #7BB7EE;
+    transition: width 0.3s ease;
+    border-radius: 0.625rem;
+}
+
+#main #frame_flashcard {
+    width: 100%;
+    font-family: sans-serif;
+    height: 260px;
+    flex-shrink: 0;
+    border-radius: 1rem;
+    perspective: 1000px;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+#frame_flashcard .flashcard {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border: 0.0625rem solid #ccc;
+    border-radius: 0.625rem;
+    padding: 0.7rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #7BB7EE;
+    transition: transform 0.6s ease-in-out;
+    cursor: pointer;
+    font-family: sans-serif;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    transform-style: preserve-3d;
+}
+
+/* Hiệu ứng hover cho flashcard */
+#frame_flashcard .flashcard:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+#frame_flashcard.flipped .flashcard:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+#frame_flashcard .flashcard #tieude_tuvung,
+#frame_flashcard .flashcard #tieude_dinhnghia,
+#frame_flashcard .flashcard #tieude_ynghia,
+#ipa {
+    font-size: 1rem;
+    color: #fff;
+}
+
+#frame_flashcard #noidung_tuvung {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: bold;
+}
+
+#frame_flashcard .nhandelatthe {
+    font-size: 0.85rem;
+    color: #fff;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+#frame_flashcard .flashcard:hover .nhandelatthe {
+    opacity: 0.8;
+}
+
+#frame_flashcard #dinhnghia,
+#frame_flashcard #ynghia {
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+#mattruoc {
+    z-index: 2;
+}
+
+#matsau {
+    transform: rotateY(180deg);
+}
+
+#frame_flashcard.flipped #mattruoc {
+    transform: rotateY(180deg);
+}
+
+#frame_flashcard.flipped #matsau {
+    transform: rotateY(0deg);
+}
+
+
+#frame_dieu_khien {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+#frame_dieu_khien .fa-chevron-left, 
+#frame_dieu_khien .fa-chevron-right {
+    font-size: 1.2rem;
+    color: #000000;
+    margin: 0 0.8rem;
+    cursor: pointer;
+    padding: 0.4rem 1.2rem;
+    border: #D9D9D9 0.0625rem solid;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    background-color: white;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hiệu ứng hover cho nút điều khiển */
+#frame_dieu_khien .fa-chevron-left:hover,
+#frame_dieu_khien .fa-chevron-right:hover {
+    background-color: #f0f0f0;
+    border-color: #7BB7EE;
+    color: #7BB7EE;
+    transform: scale(1.1);
+}
+
+#frame_dieu_khien .fa-chevron-left:active,
+#frame_dieu_khien .fa-chevron-right:active {
+    transform: scale(0.95);
+}
+
+#frame_dieu_khien #phatam {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1rem;
+    background-color: #7BB7EE;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 2rem;
+    margin: 0 0.8rem;
+    font-weight: 600;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+/* Hiệu ứng hover cho nút phát âm */
+#frame_dieu_khien #phatam:hover {
+    background-color: #5a9fd8;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(123, 183, 238, 0.3);
+}
+
+#frame_dieu_khien #phatam:active {
+    transform: scale(0.95);
+}
+
+#phatam p {
+    margin-left: 0.4rem;
+    font-weight: 500 !important;
+    font-size: 0.9rem;
+}
+
+#nut_chuc_nang {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+    flex-shrink: 0;
+}
+
+#btn_danhdaudahoc, 
+#btn_luyentap {
+    padding: 0.5rem 1.5rem;
+    background-color: white;
+    border: 0.0625rem solid #D9D9D9;
+    border-radius: 2rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+/* Hiệu ứng hover cho nút chức năng */
+#btn_danhdaudahoc:hover,
+#btn_luyentap:hover {
+    background-color: #7BB7EE;
+    color: white;
+    border-color: #7BB7EE;
+    transform: translateY(-0.1875rem);
+    box-shadow: 0 0.25rem 0.5rem rgba(123, 183, 238, 0.3);
+}
+
+#btn_danhdaudahoc:active,
+#btn_luyentap:active {
+    transform: translateY(0);
+    box-shadow: 0 0.125rem 0.25rem rgba(123, 183, 238, 0.3);
+}
+
+#frame_thongso {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0.8rem;
+    background-color: white;
+    border-radius: 0.8rem;
+    padding: 0.5rem 0;
+    flex-shrink: 0;
+    border: 1px solid #E5E7EB;
+}
+
+.thongso {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+.ten_thongso {
+    color: #6B7280;
+    font-size: 0.75rem;
+    margin-bottom: 0.15rem;
+}
+.gia_tri_thongso {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #111;
+}

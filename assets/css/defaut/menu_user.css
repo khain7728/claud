@@ -1,0 +1,198 @@
+:root {
+  --accent: #7BB7EE;
+  --bg: #ffffff;
+  --text: #111111;
+  --border-color: #D9D9D9;
+  --width-collapsed: 4.5rem;
+  /* ~72px */
+  --width-expanded: 15rem;
+  /* chiều rộng khi mở rộng */
+}
+
+/* Khung chính của menu bên */
+#menu_user {
+  font-family: 'Roboto', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  width: var(--width-collapsed);
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-right: 1px solid var(--border-color);
+  box-sizing: border-box;
+  transition: none;
+  /* ⚡ MẶC ĐỊNH: KHÔNG có transition khi load trang */
+  min-height: 100vh;
+  font-size: 0;
+  /* Ẩn text khi collapsed */
+  overflow: hidden;
+}
+
+/* ⚡ CHỈ bật transition khi user đã click toggle (có class menu-allow-transition) */
+body.menu-allow-transition #menu_user {
+  transition: width 220ms ease, font-size 220ms ease;
+}
+
+/* Khi menu được mở (class menu-open trên body) — mở rộng và cho phép chữ hiển thị */
+body.menu-open #menu_user {
+  width: var(--width-expanded);
+  font-size: 1rem;
+  align-items: stretch;
+}
+
+/* Logo */
+#menu_user #logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.77rem 0.5rem;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Kích cỡ khung logo: 40px = 2.5rem */
+#menu_user #logo svg,
+#menu_user #logo img {
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: 0 0 2.5rem;
+  padding-left: 0.5rem;
+}
+
+/* Tiêu đề logo (VOCAB) — ẩn khi collapsed, hiện khi hover */
+#menu_user #logo p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.125rem;
+  /* ~18px */
+  color: var(--text);
+  display: none;
+  margin-left: 0.5rem;
+}
+
+body.menu-open #menu_user #logo {
+  justify-content: flex-start;
+  padding-left: 1rem;
+}
+
+body.menu-open #menu_user #logo p {
+  display: block;
+}
+
+/* Frame chứa các mục menu chính */
+#frame_menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  align-items: center;
+  padding-right: 1rem;
+  padding-left: 0.5rem;
+}
+
+/* Với cấu trúc HTML hiện tại mỗi mục có id="main_menu" (lặp lại). Chọn trực tiếp phần a bên trong */
+#frame_menu>#main_menu {
+  width: 100%;
+}
+
+#frame_menu>#main_menu a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* collapsed: icon centered to match logo */
+  width: calc(100% - 0.5rem);
+  margin: 0.3rem 0.25rem;
+  padding: 0.5rem 0.6rem;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: var(--text);
+  border-radius: 0.5rem;
+  transition: background 180ms ease, color 180ms ease, transform 120ms ease, font-size 180ms ease, padding-left 180ms ease;
+  /* Khi collapsed: ẩn chữ bằng cách để font-size base = 0; icon sẽ có kích thước riêng */
+  overflow: hidden;
+}
+
+/* Icon luôn hiển thị */
+#frame_menu>#main_menu a i {
+  display: inline-block;
+  color: var(--text);
+  font-size: 1.25rem;
+  /* ~20px */
+  width: 1.75rem;
+  text-align: center;
+}
+
+/* Văn bản menu (text node) sẽ kế thừa font-size của #menu_user khi mở rộng; khi collapsed (font-size:0) sẽ bị ẩn */
+#frame_menu>#main_menu a {
+  font-size: inherit;
+  /* khi mở rộng sẽ có 1rem; khi collapsed sẽ là 0 */
+}
+
+/* Active state: nền xanh, chữ trắng, in đậm */
+#frame_menu>#main_menu a.active {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+}
+
+#frame_menu>#main_menu a.active i {
+  color: #fff;
+}
+
+/* Logout luôn nằm ở dưới cùng */
+#logout {
+  width: 100%;
+  margin-top: auto;
+  /* đẩy xuống đáy */
+  padding-top: 0.75rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+#logout a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: calc(100% - 0.5rem);
+  margin: 0.125rem 0.25rem;
+  padding: 0.5rem 0.6rem;
+  text-decoration: none;
+  color: var(--text);
+  border-radius: 0.5rem;
+  transition: background 180ms ease, color 180ms ease;
+  font-size: inherit;
+}
+
+#logout a i {
+  font-size: 1.25rem;
+  width: 1.75rem;
+  text-align: center;
+}
+
+/* Khi menu được mở rộng, canh lề cho phần anchor căn trái */
+/* Khi click icon: mở rộng menu, căn trái nội dung và đẩy icon + chữ vào vị trí bình thường */
+body.menu-open #menu_user #frame_menu>#main_menu a {
+  justify-content: flex-start;
+  padding-left: 1rem;
+}
+
+body.menu-open #menu_user #logout a {
+  justify-content: flex-start;
+  padding-left: 1rem;
+}
+
+/* Xóa transition rung lắc khi thay đổi margin của main container */
+body.menu-open #main_container {
+  transition: none !important;
+}
+
+/* Responsive nhỏ: nếu container quá nhỏ, thu gọn hơn */
+@media (max-width: 420px) {
+  :root {
+    --width-expanded: 12rem;
+  }
+}
+
+/* Kết thúc file */

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/defaut/body.css">
+    <link rel="stylesheet" href="../../assets/css/user/user_kiem_tra.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Bài Kiểm Tra - VOCAB</title>
+</head>
+
+<body>
+    <!-- menu user -->
+    <div id="menu_user"></div>
+
+    <!-- header user -->
+    <div id="header_user"></div>
+
+    <!-- content -->
+    <div id="content">
+        <p id="tieu_de_trang">Bài kiểm tra</p>
+        <div id="main">
+            <!-- Loading Spinner -->
+            <div id="kt-loading" class="kt-loading" style="display: none;">
+                <div class="kt-spinner"></div>
+                <p>Đang tải bài kiểm tra...</p>
+            </div>
+            
+            <!-- Progress -->
+            <div class="kt-progress">
+                <span class="kt-count">0/0</span>
+                <div class="kt-bar"><div class="kt-bar-inner"></div></div>
+            </div>
+
+            <!-- Trắc nghiệm -->
+            <div id="frame_tracnghiem" class="kt-section kt-hidden">
+                <div class="kt-question" id="kt-mcq-question">Đang tải...</div>
+                <div class="kt-answers">
+                    <div class="kt-answer" id="kt-mcq-a1" data-index="0">A</div>
+                    <div class="kt-answer" id="kt-mcq-a2" data-index="1">B</div>
+                    <div class="kt-answer" id="kt-mcq-a3" data-index="2">C</div>
+                    <div class="kt-answer" id="kt-mcq-a4" data-index="3">D</div>
+                </div>
+                <div class="kt-controls">
+                    <button class="kt-btn kt-btn-primary kt-next kt-hidden" id="kt-mcq-next">Tiếp theo</button>
+                </div>
+            </div>
+
+            <!-- Điền từ -->
+            <div id="frame_dientu" class="kt-section kt-hidden">
+                <div class="kt-row">
+                    <div class="kt-q" id="kt-fill-question">Đang tải...</div>
+                    <div class="kt-a">
+                        <input class="kt-input" id="kt-input" type="text" autocomplete="off" placeholder="" title="Nhập đáp án"/>
+                        <p class="kt-hint" id="kt-fill-hint">Vui lòng nhập đáp án</p>
+                    </div>
+                </div>
+                <div class="kt-controls">
+                    <button class="kt-btn kt-btn-ghost kt-check" id="kt-fill-check">Kiểm tra</button>
+                    <button class="kt-btn kt-btn-primary kt-next kt-hidden" id="kt-fill-next">Tiếp theo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cross-tab Sync Scripts -->
+    <script src="../../assets/js/defaut/sync_validator.js"></script>
+    <script src="../../assets/js/defaut/sync_manager.js"></script>
+    <script src="../../assets/js/defaut/sync_helpers.js"></script>
+    
+    <script src="../../assets/js/defaut/auth_check.js"></script>
+    <!-- Script để load menu và header -->
+    <script src="../../assets/js/user/layout_user.js"></script>
+    <script src="../../assets/js/user/user_kiem_tra.js"></script>
+</body>
+
+</html>

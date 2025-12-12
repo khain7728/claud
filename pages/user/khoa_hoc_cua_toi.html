@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/defaut/body.css">
+    <link rel="stylesheet" href="../../assets/css/defaut/menu_user.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/user/khoa_hoc_cua_toi.css">
+    
+    <!-- ⚡ Script restore menu state TRƯỚC KHI render -->
+    <script src="../../assets/js/user/menu_state.js"></script>
+    
+    <title>Khóa Học Của Tôi - VOCAB</title>
+</head>
+
+<body>
+    <div id="menu_user">
+        <div id="logo">
+            <svg width="65" height="65" viewBox="0 0 65 65" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <rect width="65" height="65" rx="15" fill="url(#paint0_linear_89_139)"/>
+            <rect x="13" y="13" width="40" height="40" fill="url(#pattern0_89_139)"/>
+            <defs>
+            <pattern id="pattern0_89_139" patternContentUnits="objectBoundingBox" width="1" height="1">
+            <use xlink:href="#image0_89_139" transform="scale(0.015625)"/>
+            </pattern>
+            <linearGradient id="paint0_linear_89_139" x1="65" y1="2.98026e-08" x2="-7.63398e-07" y2="33" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#7BB7EE"/>
+            <stop offset="0.25" stop-color="#91BFEA"/>
+            <stop offset="0.5" stop-color="#A7C7E7"/>
+            <stop offset="1" stop-color="#5B9BD5"/>
+            </linearGradient>
+            <image id="image0_89_139" width="64" height="64" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAABJlJREFUeJztm1toXFUUhr81bUyLFe8mtGgt2nhJrTZptA00pWjRUh9LwTd9Uag+CuqD4KWK2DdBFBSfLCjSF7VCUSgF4wVrom0lXhr6YlNiLMYmNI25/D7sM0lmOpm9J3MmO2nPD/thZtZe61//nNlnb+Y/kOHyhlUSLGkJ0ASsAq4FRoDTwEkzG0qfXlkuK4DbgUbgKuAs0Af8YWYToXm8AkhaDjwG7AI6gCtLhE0CvwJHgR+S8ZOZjYYS8XC4ArgXaEvG/cCdQK5E+DBwBDgAfGRmI+VyzyqApDrgGeAF4MY58B4DfmZakO/MrCdkoqS1wCZco23AfUD9HDgMAK8Db5vZWPAsSWsldSt99EnaJ+nWEjVvkfSGpD9rULdbUlNo8x2SBmtAYiZGJL0qqS4Zr0g6X+Oag5I6ivu1oubbga+A5cGXS3X4GhCwZZ7qjQAPmdk3+TemBJC0Cuhmbr/3xYQBYIOZnYbCVfR9Lv3mwfX4Xv6FAUjaAXwRmGAcd6X0AVcD64Ab0uUYjH7c7fdf4OaES13g3J1m5nqW1BmwiJyX9JKk64szSVojabfcCn9E0lANFrFzkg5LelPSLkmrS/BokPSypNGAfJ35Sc0BwQOSNoZ+LZKWJHkfl/SOpDMVt+vmvJvkaJZUatMzW/2Nkv4JqHE3kp73BE1K2hZafBZCSyXtTXL5MCnpNbltdzU1Hwyo9xySDnqCPq6GSBGpDwME2J9ivU88tT5H0ilP0I4UCbUGCNCSYr2dnlq9JmmY0gecPG4ys4GUCNUDFzxhy1I8RDUCZ8qEDJukScqfCnNmpjQIJaTK5jKzio7onlo5oNzRWDk8R+I0m59vmNmkLyT41nKpIhMgNoHYyASITSA2MgFiE4iNTIDYBGIjEyA2gdjIBIhNIDYyAWITiI1MgNgEYiMTIDaB2MgEiE0gNjIBYhOIjUwAyv9zkjdHLkpIWuoJGc8Bf3uCGlLiEwONns8HcsBfnqCLrGWLCFs9n/fngBOeoD0pkZlXSDLgaU/Y8RzOF1gOWyQ9lQ6tecUeYLMn5kskrZQ05jESjEl6Ig1WPndESjWelDTuKTUqqSE/Yb+PWIKDkrbLGR0WlACS6iU9LOlQYC8fwLRPcD3O+xe6L7gAHAO6kvEjcMLM/gsgWrVBQs4+vw5oBVqSsR5Y5mXuMAHcY2Y9M62y+4BnAxOUwjjwO06MqVHs169UADnbfhOu2fxooTo/814zexEKvcL1wPe4BxPSwhjwC9NXSRfwrWfOZlyD+UabCXd/huAo0J5/fqBY7QbgMHBXigUXEn4DtpnZlHGq4DdvZv3Advx7g8WILmDrzOahxKKX2MjbgLdwXv7FDuF6aU++4ApmSg9I+lRhFteFhglJByS1lusxyJMn6Q7gUeAR3CJVzlgZE0NAJ3AI+MzMen0TKjYlyh2PV+NW5/xtqR24rtJcVWIItxeZedvtCfAGFiBNV+ZKCu/Vm0jvQYpzwHGqbLYUUhOgGHKnsdso3K1tAC564KIIZ3G70pl7h95aOVZrJsBskHQNsAYnxIrk7WFc46fMbHC+OWW4nPE/FaYbMzJN7KQAAAAASUVORK5CYII="/>
+            </defs>
+            </svg>
+            <p>VOCAB</p>
+        </div>
+        <div id="frame_menu">
+            <div id="main_menu">
+                <a href="user_Dashboard.html">
+                    <i class="fa-solid fa-grip"></i>
+                    Trang chủ
+                </a>
+            </div>
+            <div id="main_menu">
+                <a href="khoa_hoc_cua_toi.html">
+                    <i class="fa-regular fa-folder-open"></i>
+                    Quản lý khóa học
+                </a>
+            </div>
+        </div>
+        <div id="logout">
+            <a href="/VOCAB/auth/logout.php">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                Đăng xuất
+            </a>
+        </div>
+    </div>
+
+    <div id="header_user"></div>
+
+    <div id="content">
+        <div class="khung-tab-chuyen-trang">
+            <button id="tab-khoa-hoc-cua-toi" class="tab-chuyen-trang active">Khóa học của tôi</button>
+            <button id="tab-khoa-hoc-cong-dong" class="tab-chuyen-trang">Khóa học cộng đồng</button>
+        </div>
+
+        <div id="main">
+            
+            <div class="khung-tieu-de-va-loc">
+                <div class="khung-bo-loc">
+                    <!-- Dropdown 1: Nguồn gốc -->
+                    <div style="position: relative;">
+                        <div class="bo-loc-hien-tai" id="bo-loc-nguon-goc">
+                            <span id="tieu-de-nguon-goc">Tất cả khóa học</span>
+                            <i class="fa-solid fa-caret-down"></i>
+                        </div>
+                        <div class="menu-loc-dropdown an" id="menu-loc-nguon-goc">
+                            <div class="lua-chon-loc active" data-source="tat-ca">
+                                <i class="fa-solid fa-check"></i> Tất cả khóa học
+                            </div>
+                            <div class="lua-chon-loc" data-source="da-tao">
+                                <i class="fa-solid fa-check"></i> Khóa học đã tạo
+                            </div>
+                            <div class="lua-chon-loc" data-source="da-tham-gia">
+                                <i class="fa-solid fa-check"></i> Khóa học đã tham gia
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Dropdown 2: Trạng thái học tập -->
+                    <div style="position: relative;">
+                        <div class="bo-loc-hien-tai" id="bo-loc-trang-thai">
+                            <span id="tieu-de-trang-thai">Tất cả trạng thái</span>
+                            <i class="fa-solid fa-caret-down"></i>
+                        </div>
+                        <div class="menu-loc-dropdown an" id="menu-loc-trang-thai">
+                            <div class="lua-chon-loc active" data-status="tat-ca">
+                                <i class="fa-solid fa-check"></i> Tất cả trạng thái
+                            </div>
+                            <div class="lua-chon-loc" data-status="chua-hoc">
+                                <i class="fa-solid fa-check"></i> Chưa học
+                            </div>
+                            <div class="lua-chon-loc" data-status="dang-hoc">
+                                <i class="fa-solid fa-check"></i> Đang học
+                            </div>
+                            <div class="lua-chon-loc" data-status="hoan-thanh">
+                                <i class="fa-solid fa-check"></i> Hoàn thành
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="btn-tao-khoa-hoc">
+                    <i class="fa-solid fa-plus"></i> Tạo khóa học
+                </button>
+            </div>
+
+            <div class="khung-tim-kiem">
+                <i class="fa-solid fa-search"></i>
+                <input type="text" id="thanh-tim-kiem" placeholder="Tìm kiếm khóa học...">
+            </div>
+
+            <div class="danh-sach-khoa-hoc" id="danh-sach-khoa-hoc">
+                </div>
+
+            <div class="khung-phan-trang" id="khung-phan-trang">
+                </div>
+
+        </div>
+    </div>
+
+    <div id="khung-che-mo" class="an">
+
+        <div id="modal-tao-khoa-hoc" class="modal-noi-dung an">
+            <h2 class="tieu-de-modal">Thông tin khóa học</h2>
+            <p class="mota-modal">Nhập đầy đủ thông tin và những ô có dấu (*)</p>
+            
+            <form id="form-tao-khoa-hoc">
+                <div class="nhom-form">
+                    <label for="ten-khoa-hoc-input">Tên khóa học *</label>
+                    <input type"text" id="ten-khoa-hoc-input" placeholder="Nhập tên khóa học">
+                </div>
+                
+                <div class="hang-form">
+                    <div class="nhom-form">
+                        <label for="trang-thai-select">Trạng thái</label>
+                        <select id="trang-thai-select">
+                            <option value="cong-khai">Công khai</option>
+                            <option value="rieng-tu">Riêng tư</option>
+                        </select>
+                    </div>
+                    <div class="nhom-form">
+                        <label for="tag-input">Tag*</label>
+                        <input type="text" id="tag-input" placeholder="Nhập tag cách nhau bởi dấu ','">
+                        <a href="#" id="btn-chon-tag" class="link-modal">Hoặc chọn tag có sẵn</a>
+                    </div>
+                </div>
+                
+                <div class="nhom-form">
+                    <label for="mo-ta-input">Mô tả khóa học</label>
+                    <textarea id="mo-ta-input" rows="3" placeholder="Nhập mô tả khóa học tại đây"></textarea>
+                </div>
+                
+                <div class="khung-nut-modal">
+                    <button type="button" id="btn-huy-modal-taokhoahoc" class="nut-modal nut-huy">Hủy</button>
+                    <button type="submit" id="btn-them-tu-vung" class="nut-modal nut-xacnhan">Thêm từ vựng</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="modal-them-tag" class="modal-noi-dung an">
+            <div class="dau-modal">
+                <h2 class="tieu-de-modal">Thêm Tag</h2>
+                <button id="btn-dong-modal-tag" class="nut-dong-modal"><i class="fa-solid fa-times"></i></button>
+            </div>
+            
+            <p class="tieu-de-nho">Tag đã chọn</p>
+            <div class="khung-tag-list" id="khung-tag-da-chon">
+                </div>
+
+            <p class="tieu-de-nho">Tag gợi ý</p>
+            <div class="khung-tag-list" id="khung-tag-goi-y">
+                </div>
+            
+            <div class="khung-nut-modal mot-nut">
+                <button type="button" id="btn-xac-nhan-tag" class="nut-modal nut-xacnhan">Xác nhận</button>
+            </div>
+        </div>
+
+    </div>
+    <!-- Cross-tab Sync Scripts -->
+    <script src="../../assets/js/defaut/sync_validator.js"></script>
+    <script src="../../assets/js/defaut/sync_manager.js"></script>
+    <script src="../../assets/js/defaut/sync_helpers.js"></script>
+    
+    <script src="../../assets/js/defaut/auth_check.js"></script>
+    <script src="../../assets/js/user/layout_user.js"></script>
+    <script src="../../assets/js/user/khoa_hoc_cua_toi.js"></script>
+</body>
+
+</html>

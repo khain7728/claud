@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/defaut/body.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/user/user_hoc_tu_vung.css">
+    <title>Học Với Flashcard - VOCAB</title>
+</head>
+
+<body>
+    <!-- menu user -->
+    <div id="menu_user"></div>
+
+    <!-- header user -->
+    <div id="header_user"></div>
+
+    <!-- content -->
+    <div id="content">
+        <p id="tieu_de_trang">Học với flashcard</p>
+
+        <div id="main">
+            <!-- thanh số lượng từ vựng -->
+            <div class="flashcard-progress">
+                <span id="soluongtuvung">1/20</span>
+                <div id="thanhsoluong">
+                    <div id="tongsoluong">
+                        <div id="soluonghientai"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- flashcard -->
+            <div id="frame_flashcard">
+                <div id="mattruoc" class="flashcard">
+                    <p id="tieude_tuvung">Từ vựng</p>
+                    <span id="noidung_tuvung">Hello</span>
+                    <span id="ipa">/heˈləʊ/</span>
+                    <p id="nhandelatthe" class="nhandelatthe">Nhấn để lật thẻ</p>
+                </div>
+                <div id="matsau" class="flashcard">
+                    <p id="tieude_dinhnghia">Định nghĩa</p>
+                    <span id="dinhnghia">used when meeting someone</span>
+                    <p id="tieude_ynghia">Ý nghĩa</p>
+                    <span id="ynghia">Xin chào</span>
+                    <p id="nhandelatthe" class="nhandelatthe">Nhấn để lật thẻ</p>
+                </div>
+            </div>
+
+            <!-- nút điều khiển -->
+            <div id="frame_dieu_khien">
+                <i class="fa-solid fa-chevron-left"></i>
+                <div id="phatam">
+                    <i class="fa-solid fa-volume-high"></i>
+                    <p>Phát âm</p>
+                </div>
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+
+            <!-- nút chức năng -->
+            <div id="nut_chuc_nang">
+                <button id="btn_danhdaudahoc">Đánh dấu đã học</button>
+                <button id="btn_luyentap">Luyện tập</button>
+            </div>
+
+            <!-- thông số đã học -->
+            <div id="frame_thongso">
+                <div class="thongso">
+                    <p class="ten_thongso">Đã học</p>
+                    <span class="gia_tri_thongso" id="dahoc">0</span>
+                </div>
+                <div class="thongso">
+                    <p class="ten_thongso">Còn lại</p>
+                    <span class="gia_tri_thongso" id="conlai">20</span>
+                </div>
+                <div class="thongso">
+                    <p class="ten_thongso">Tiến độ</p>
+                    <span class="gia_tri_thongso" id="tiendo">20%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script để load menu và header -->
+    <!-- Cross-tab Sync Scripts -->
+    <script src="../../assets/js/defaut/sync_validator.js"></script>
+    <script src="../../assets/js/defaut/sync_manager.js"></script>
+    <script src="../../assets/js/defaut/sync_helpers.js"></script>
+    
+    <script src="../../assets/js/defaut/auth_check.js"></script>
+    <script src="../../assets/js/user/layout_user.js"></script>
+    <script src="../../assets/js/user/user_hoc_tu_vung.js"></script>
+</body>
+
+</html>

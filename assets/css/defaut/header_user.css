@@ -1,0 +1,77 @@
+:root{
+    --border-color: #D9D9D9;
+}
+
+#header_user{
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* menu trái, phần còn lại sang phải */
+    background: #ffffff; /* nền trắng */
+    padding: 0.75rem 1rem; /* 12px 16px */
+    box-sizing: border-box;
+    border-bottom: 1px solid var(--border-color);
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+/* Thanh menu bên trái */
+#header_user #menu{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem; /* 40px */
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    color: #0f172a;
+    transition: background-color 140ms ease, transform 140ms ease;
+}
+
+#header_user #menu:hover{ background: rgba(123,183,238,0.08); transform: translateY(-2px); }
+#header_user #menu:active{ transform: translateY(0); }
+
+/* Khối bên phải chứa icon và user */
+#header_user > div:nth-child(2){
+    display: flex;
+    align-items: center;
+    gap: 1.25rem; /* 20px */
+}
+
+#header_user > div:nth-child(2) > div{ /* mỗi ô icon hoặc user */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* 8px */
+    padding: 0.4rem 0.6rem; /* nhỏ gọn */
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 140ms ease;
+}
+
+#header_user > div:nth-child(2) > div:hover{ background: rgba(123,183,238,0.06); }
+
+#header_user i{ /* fontawesome icons */
+    font-size: 1.5rem; /* 18px */
+    color: #334155;
+}
+
+
+#header_user img{ /* fontawesome icons */
+    width: 2rem; /* 18px */
+    height: 2rem;
+    background-color: #A7C7E7;
+    border-radius: 10000rem;
+}
+
+#header_user p{ margin: 0; font-size: 0.95rem; color: #0f172a; }
+
+/* Căn chỉnh cụ thể cho user box */
+#header_user > div:nth-child(2) > div:last-child{ display:flex; align-items:center; gap:0.5rem; }
+
+/* Responsive: nhỏ hơn 480px, ẩn text user, chỉ show icon */
+@media (max-width:30rem){ /* 480px */
+    #header_user p{ display:none; }
+    #header_user{ padding:0.5rem 0.75rem; }
+    #header_user > div:nth-child(2){ gap:0.5rem; }
+}
+
+/* Accessibility: focus outline */
+#header_user #menu:focus, #header_user > div:nth-child(2) > div:focus{ outline: 3px solid rgba(123,183,238,0.18); outline-offset: 2px; }

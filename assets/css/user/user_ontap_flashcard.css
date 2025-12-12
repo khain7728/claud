@@ -1,0 +1,215 @@
+/* Styles kế thừa từ body.css: *, #main, #tieu_de_trang */
+
+html { font-size: 16px; }
+
+/* Custom cho trang flashcard ôn tập */
+#tieu_de_trang {
+	color: #7F4A4A;
+	display: flex;
+	align-items: center;
+	gap: 0.625rem;
+}
+#tieu_de_trang p {
+	margin: 0;
+}
+#tieu_de_trang i {
+	background-color: #7F4A4A;
+	color: #fff;
+	padding: 0.5rem;
+	border-radius: 0.5rem;
+	font-size: 1.25rem;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.5rem;
+	height: 2.5rem;
+}
+
+.process {
+	width: 100%;
+	height: 1.25rem;
+	background-color: #EFD9D9;
+	border-radius: 0.625rem;
+	border: #7F4A4A 0.0625rem solid;
+	overflow: hidden;
+	margin-bottom: 0.75rem;
+	position: relative;
+}
+.process .tongsocauhoi { width: 100%; height: 100%; }
+.process .socauhoihientai {
+	display: block;
+	width: 0%;
+	height: 100%;
+	background: linear-gradient(90deg, #7F4A4A, #B56A6A);
+	transition: width 0.5s ease;
+}
+
+/* Flashcard frame */
+#frame_flashcard {
+	width: 100%;
+	margin: 0.5rem 0;
+	height: 16rem;
+	border-radius: 1.25rem;
+	perspective: 1000px;
+	position: relative;
+	transform-style: preserve-3d;
+}
+
+#frame_flashcard .flashcard {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	border: 0.0625rem solid #ccc;
+	border-radius: 0.625rem;
+	padding: 0.9375rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	background-color: #7F4A4A;
+	transition: transform 0.6s ease-in-out;
+	cursor: pointer;
+	box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.1);
+	transform-style: preserve-3d;
+}
+
+#frame_flashcard .flashcard:hover {
+	box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+}
+
+#frame_flashcard.flipped .flashcard:hover {
+	box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+}
+
+#frame_flashcard .flashcard #tieude_tuvung,
+#frame_flashcard .flashcard #tieude_dinhnghia,
+#frame_flashcard .flashcard #tieude_ynghia,
+#ipa {
+	font-size: 1.5rem;
+	color: #fff;
+}
+
+#frame_flashcard #noidung_tuvung {
+	font-size: 2.25rem;
+	color: #fff;
+	font-weight: bold;
+}
+
+#frame_flashcard .nhandelatthe {
+	font-size: 1.25rem;
+	color: #fff;
+	opacity: 0.7;
+	transition: opacity 0.3s ease;
+}
+#frame_flashcard .flashcard:hover .nhandelatthe { opacity: 1; }
+
+#frame_flashcard #dinhnghia,
+#frame_flashcard #ynghia {
+	color: #fff;
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+#mattruoc { z-index: 2; }
+#matsau { transform: rotateY(180deg); }
+#frame_flashcard.flipped #mattruoc { transform: rotateY(180deg); }
+#frame_flashcard.flipped #matsau { transform: rotateY(0deg); }
+
+/* Control bar */
+#frame_dieukhien {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-evenly;
+	gap: 0.75rem;
+	margin-top: 1.25rem;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
+#frame_phatam {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	cursor: pointer;
+	font-size: 1rem;
+	background-color: #EFD9D9;
+	padding: 0.5rem 1rem;
+	border: #D9D9D9 0.0625rem solid;
+	border-radius: 2rem;
+	font-weight: 600;
+	transition: all 0.3s ease;
+}
+#frame_phatam p { margin-left: 0.5rem; font-weight: 500; }
+#frame_phatam:hover { background-color: #7F4A4A; color: #fff; border-color: #7F4A4A; transform: scale(1.05); }
+#frame_phatam:active { transform: scale(0.95); }
+
+#dathuoctunay,
+#quentunay,
+#quaylai,
+#tieptheo {
+	font-size: 1rem;
+	padding: 0.5rem 1.25rem;
+	border-radius: 2rem;
+	border: none;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	min-width: 8rem;
+	font-weight: 600;
+}
+
+#dathuoctunay { background-color: #2F80ED; color: #fff; }
+#dathuoctunay:hover { 
+	background-color: #2567c7;
+	transform: translateY(-0.1875rem);
+	box-shadow: 0 0.25rem 0.5rem rgba(47, 128, 237, 0.3);
+}
+#dathuoctunay:active { 
+	transform: translateY(0);
+	box-shadow: 0 0.125rem 0.25rem rgba(47, 128, 237, 0.3);
+}
+
+#quentunay { background-color: #ffffff; color: #FF0404; border: #FF0404 0.0625rem solid; }
+#quentunay:hover { 
+	background-color: #FF0404;
+	color: #fff;
+	transform: translateY(-0.1875rem);
+	box-shadow: 0 0.25rem 0.5rem rgba(255, 4, 4, 0.3);
+}
+#quentunay:active { 
+	transform: translateY(0);
+	box-shadow: 0 0.125rem 0.25rem rgba(255, 4, 4, 0.3);
+}
+
+#quaylai { background-color: #D0E9FF; color:#0b2e4e; }
+#quaylai:hover { 
+	background-color:#b8d9fb;
+	transform: translateY(-0.1875rem);
+	box-shadow: 0 0.25rem 0.5rem rgba(208, 233, 255, 0.3);
+}
+#quaylai:active { 
+	transform: translateY(0);
+	box-shadow: 0 0.125rem 0.25rem rgba(208, 233, 255, 0.3);
+}
+
+#tieptheo { background-color: #A8CAF8; color:#000; }
+#tieptheo:hover { 
+	background-color:#7BAEF6;
+	transform: translateY(-0.1875rem);
+	box-shadow: 0 0.25rem 0.5rem rgba(168, 202, 248, 0.3);
+}
+#tieptheo:active { 
+	transform: translateY(0);
+	box-shadow: 0 0.125rem 0.25rem rgba(168, 202, 248, 0.3);
+}
+
+/* không còn anchor trong nút tiếp theo */
+
+/* Responsive */
+@media (max-width: 48rem) {
+	#frame_flashcard { height: 18rem; }
+	#frame_flashcard #noidung_tuvung { font-size: 2.25rem; }
+	#frame_flashcard #dinhnghia, #frame_flashcard #ynghia, #ipa { font-size: 1.5rem; }
+}

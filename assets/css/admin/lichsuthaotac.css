@@ -1,0 +1,388 @@
+/* --- 1. CẤU TRÚC CƠ BẢN --- */
+/* Styles kế thừa từ body.css: *, body, #main, #tieu_de_trang */
+
+body {
+    background-color: #f4f7f6;
+}
+
+.page-content {
+    padding: 20px;
+}
+
+
+/* --- 2. HEADER --- */
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.page-title {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+    font-weight: 700;
+}
+
+.page-subtitle {
+    margin: 4px 0 0;
+    color: #666;
+    font-size: 14px;
+}
+
+
+/* Nút Export */
+
+.btn-export {
+    background-color: #10B981;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+}
+
+.btn-export:hover {
+    background-color: #059669;
+}
+
+
+/* --- 3. TOOLBAR (SEARCH & FILTER) --- */
+
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* Search Box */
+
+.search-bar {
+    position: relative;
+    width: 200px;
+}
+
+.search-bar i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px 10px 10px 36px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.search-bar input:focus {
+    border-color: #3B82F6;
+}
+
+
+/* Date Filter */
+
+.date-group label {
+    font-size: 14px;
+    color: #555;
+    font-weight: 500;
+}
+
+.date-input {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: inherit;
+    color: #333;
+}
+
+.separator {
+    color: #999;
+}
+
+.form-select {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+}
+
+
+/* ========================================= */
+
+
+/* 4. TABLE (BẢNG DỮ LIỆU) - QUAN TRỌNG      */
+
+
+/* ========================================= */
+
+.table-container {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    overflow-x: auto;
+    margin-bottom: 20px;
+    border: 1px solid #E5E7EB;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+    min-width: 1000px;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 14px 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    vertical-align: middle;
+    color: #4B5563;
+    word-wrap: break-word;
+}
+
+.admin-table th {
+    background-color: #F9FAFB;
+    color: #374151;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+
+/* --- ĐỊNH NGHĨA ĐỘ RỘNG CỘT --- */
+
+.col-stt {
+    width: 50px;
+    text-align: center !important;
+}
+
+.col-action {
+    width: 180px;
+    font-weight: 500;
+    color: #111;
+}
+
+.col-target {
+    width: 80px;
+    text-align: center !important;
+}
+
+.col-admin {
+    width: 150px;
+}
+
+.col-ip {
+    width: 130px;
+    font-family: monospace;
+    color: #64748b;
+}
+
+/* Cột thời gian - đã hoán đổi vị trí với thiết bị */
+.col-time {
+    width: 150px;
+    text-align: center !important;
+}
+
+/* Cột thiết bị - đã hoán đổi vị trí với thời gian */
+.col-ua {
+    width: 250px;
+    text-align: right !important;
+}
+
+
+/* --- CLASS CẮT CHỮ (TRUNCATE) - Đã tắt để hiện full text --- */
+
+.truncate-cell {
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.admin-table tr:hover {
+    background-color: #F9FAFB;
+}
+
+
+/* Sort Header */
+
+th.sortable {
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s;
+}
+
+th.sortable:hover {
+    background-color: #e2e8f0;
+}
+
+th.sortable i {
+    margin-left: 6px;
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+
+/* ========================================= */
+
+
+/* 5. PAGINATION (PHÂN TRANG) - UPDATE FIX   */
+
+
+/* ========================================= */
+
+#pagination {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    padding: 20px 0;
+    gap: 6px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 10;
+}
+
+.page-btn {
+    min-width: 36px;
+    height: 36px;
+    padding: 0 10px;
+    border: 1px solid #E5E7EB;
+    background: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #6B7280;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    margin: 0 2px;
+}
+
+.page-btn:hover:not(:disabled) {
+    background-color: #F3F4F6;
+    color: #111;
+    border-color: #D1D5DB;
+}
+
+.page-btn.active {
+    background-color: #3B82F6;
+    color: #fff;
+    border-color: #3B82F6;
+}
+
+.page-btn:disabled {
+    background-color: #F9FAFB;
+    color: #D1D5DB;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.page-dots {
+    display: flex;
+    align-items: flex-end;
+    padding: 0 5px;
+    color: #9CA3AF;
+    font-weight: bold;
+}
+
+
+/* --- 6. TOAST NOTIFICATION --- */
+
+#toast-container {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.toast-message {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 280px;
+    padding: 14px 20px;
+    color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-size: 14px;
+    animation: slideInRight 0.3s ease forwards;
+}
+
+.toast-message.success {
+    background-color: #10B981;
+}
+
+.toast-message.error {
+    background-color: #EF4444;
+}
+
+.toast-message.warning {
+    background-color: #F59E0B;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+/* Responsive Mobile */
+
+@media (max-width: 768px) {
+    .toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .search-bar {
+        width: 100%;
+    }
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .btn-export {
+        width: 100%;
+        justify-content: center;
+    }
+}

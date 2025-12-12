@@ -1,0 +1,183 @@
+/* Styles kế thừa từ body.css: *, #tieu_de_trang */
+/* #main - sử dụng từ body.css (width: 95%, margin-left: 2.5rem, flex layout) */
+
+#content {
+    height: calc(100vh - 64px);
+    overflow-y: auto;
+    padding-bottom: 1rem;
+}
+
+#main {
+    gap: 0.8rem;
+}
+
+#main .frame_ontap {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 1.2rem;
+    border-radius: 1rem;
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+#main .frame_ontap:hover {
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+}
+
+.frame_trac_nghiem {
+    border: #2F80ED 0.0625rem solid;
+}
+.frame_dien_tu {
+    border: #FFB703 0.0625rem solid;
+}
+.frame_flashcard {
+    border: #7F4A4A 0.0625rem solid;
+}
+
+#main .frame_tieude {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.625rem;
+    margin-bottom: 0.4rem;
+}
+
+#main .frame_tieude p {
+    font-size: 1.2rem;
+    font-weight: bolder;
+    margin: 0;
+    line-height: 1;
+}
+
+.trac_nghiem {
+    color: #2F80ED;
+}
+.trac_nghiem i {
+    background-color: #2F80ED;
+    color: white;
+    padding: 0.4rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+}
+
+.dien_tu {
+    color: #FFB703;
+}
+.dien_tu i {
+    background-color: #FFB703;
+    color: white;
+    padding: 0.4rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+}
+
+.flashcard {
+    color: #7F4A4A;
+}
+.flashcard i {
+    background-color: #7F4A4A;
+    color: white;
+    padding: 0.4rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+}
+
+.frame_ontap .mota_tracnghiem {
+    font-size: 0.9rem;
+    color: #2F80ED;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+    margin-top: 0;
+}
+
+.frame_ontap .mota_dientu {
+    font-size: 0.9rem;
+    color: #FFB703;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+    margin-top: 0;
+}
+
+.frame_ontap .mota_flashcard {
+    font-size: 0.9rem;
+    color: #7F4A4A;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+    margin-top: 0;
+}
+
+.frame_ontap .batdau_tracnghiem {
+    width: 100%;
+    text-align: center;
+    background-color: #2F80ED;
+    color: white;
+    font-size: 1.125rem;
+    padding: 0.5rem 1rem;
+    border: #4C9EE3 0.0625rem solid;
+    border-radius: 0.625rem;
+    cursor: pointer;
+    text-decoration: none;
+    margin-bottom: 0;
+    transition: all 0.3s ease;
+}
+
+.frame_ontap .batdau_tracnghiem:hover {
+    background-color: #2567c7;
+    transform: scale(1.02);
+}
+
+.frame_ontap .batdau_dientu {
+    width: 100%;
+    text-align: center;
+    background-color: #FFB703;
+    color: white;
+    font-size: 1.125rem;
+    padding: 0.5rem 1rem;
+    border: #FFB703 0.0625rem solid;
+    border-radius: 0.625rem;
+    cursor: pointer;
+    text-decoration: none;
+    margin-bottom: 0;
+    transition: all 0.3s ease;
+}
+
+.frame_ontap .batdau_dientu:hover {
+    background-color: #e6a503;
+    transform: scale(1.02);
+}
+
+.frame_ontap .batdau_flashcard {
+    width: 100%;
+    text-align: center;
+    background-color: #7F4A4A;
+    color: white;
+    font-size: 1.125rem;
+    padding: 0.5rem 1rem;
+    border: #7F4A4A 0.0625rem solid;
+    border-radius: 0.625rem;
+    cursor: pointer;
+    text-decoration: none;
+    margin-bottom: 0;
+    transition: all 0.3s ease;
+}
+
+.frame_ontap .batdau_flashcard:hover {
+    background-color: #6a3e3e;
+    transform: scale(1.02);
+}

@@ -1,0 +1,50 @@
+# ===========================================
+# GITIGNORE - VOCAB PROJECT
+# ===========================================
+
+# --- Environment & Secrets ---
+.env
+.env.local
+.env.*.local
+
+# --- Dependencies ---
+/vendor/
+/node_modules/
+composer.lock
+package-lock.json
+
+# --- User Uploads ---
+/uploads/*
+!/uploads/.gitkeep
+
+# --- Logs ---
+/logs/*
+!/logs/.gitkeep
+*.log
+
+# --- IDE & Editor ---
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+
+# --- System Files ---
+*.swp
+*.swo
+*~
+
+# --- Cache & Temp ---
+/cache/
+/temp/
+/tmp/
+*.cache
+
+# --- Backup Files ---
+*.bak
+*.backup
+*.old
+
+# --- OAuth Credentials (Double Check) ---
+config/oauth_local.php

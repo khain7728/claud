@@ -1,0 +1,198 @@
+<!--
+    DASHBOARD USER
+    Trang dashboard dành cho người dùng thường
+-->
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/defaut/body.css">
+    <link rel="stylesheet" href="../../assets/css/defaut/menu_user.css">
+    <link rel="stylesheet" href="../../assets/css/user/user_Dashboard.css">
+    <link rel="stylesheet" href="../../assets/css/user/goal_section.css">
+    <link rel="stylesheet" href="../../assets/fonts/fontawesome/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- ⚡ Script restore menu state TRƯỚC KHI render -->
+    <script src="../../assets/js/user/menu_state.js"></script>
+    
+    <title>Trang chủ - VOCAB</title>
+</head>
+
+<body>
+    <!-- menu user -->
+    <div id="menu_user"></div>
+
+    <!-- header user -->
+    <div id="header_user"></div>
+
+    <!-- content -->
+    <div id="content">
+        <p id="tieu_de_trang">Trang chủ</p>
+        <div class="title" style="font-size: 14px; font-weight: 200;" id="welcome-message">Chào mừng bạn trở lại</div>
+        <div id="main">
+            <!-- nội dung trang sẽ được viết bên trong này -->
+            <div class="dashboard-container">
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-label">Khóa học</div>
+                        <div class="stat-icon">
+                            <div class="icon-box">
+                                <i class="fa-solid fa-folder"></i>
+                            </div>
+                        </div>
+                        <div class="stat-value" id="total-courses">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Số từ đã học</div>
+                        <div class="stat-icon">
+                            <div class="icon-box">
+                                <i class="fa-solid fa-book"></i>
+                            </div>
+                        </div>
+                        <div class="stat-value" id="total-words">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Điểm trung bình</div>
+                        <div class="stat-icon">
+                            <div class="icon-box">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+                        </div>
+                        <div class="stat-value" id="avg-score">0/100</div>
+                    </div>
+                </div>
+
+                <!-- Chart Section -->
+                <div class="chart-section">
+                    <h2 class="section-title">Kết quả bài kiểm tra tuần này</h2>
+                    <div class="chart-container">
+                        <canvas id="weeklyChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- My Courses Section -->
+                <div class="courses-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Khóa học của tôi</h2>
+                        <button class="btn-create-course" onclick="window.location.href='khoa_hoc_cua_toi.html'">Xem thêm khóa học</button>
+                    </div>
+
+                    <!-- Course Cards Grid -->
+                    <div class="courses-grid" id="courses-grid">
+                        <!-- Courses sẽ được load từ API -->
+                        <div style="text-align: center; padding: 20px; color: #999;">
+                            <i class="fa-solid fa-spinner fa-spin"></i> Đang tải khóa học...
+                        </div>
+                    </div>
+
+                    <!-- Mục tiêu hôm nay -->
+                    <div class="goal-section">
+                        <div class="goal-header">
+                            <h2 class="section-title">🎯 Mục tiêu hôm nay</h2>
+                            <div class="streak-badge" id="streak-badge" style="display: none;">
+                                <i class="fa-solid fa-fire" style="color: #ff6b35;"></i>
+                                <span id="streak-days">0</span> ngày
+                            </div>
+                        </div>
+
+                        <!-- Hiển thị khi chưa có mục tiêu -->
+                        <div class="goal-card no-goal-state" id="no-goal-card" style="display: none;">
+                            <p class="goal-text">Bạn chưa thiết lập mục tiêu học hôm nay</p>
+                            <p class="goal-subtitle">Thiết lập mục tiêu để theo dõi tiến độ học tập của bạn</p>
+                            <button class="btn-primary" onclick="showGoalModal()">
+                                <i class="fa-solid fa-plus"></i> Thiết lập mục tiêu
+                            </button>
+                        </div>
+
+                        <!-- Hiển thị khi đã có mục tiêu -->
+                        <div class="goal-card has-goal-state" id="has-goal-card" style="display: none;">
+                            <div class="goal-info">
+                                <h3 id="goal-title">Học 20 từ hôm nay</h3>
+                                <p class="goal-subtitle" id="goal-subtitle">Đã học 10/20 từ hôm nay</p>
+                            </div>
+                            
+                            <div class="goal-progress">
+                                <div class="progress-info">
+                                    <span class="progress-label">Hoàn thành</span>
+                                    <span class="progress-percent" id="goal-progress-percent">50%</span>
+                                </div>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar-fill" id="goal-progress-bar" style="width: 50%"></div>
+                                </div>
+                            </div>
+
+                            <div class="goal-actions">
+                                <button class="btn-secondary btn-large" onclick="showGoalModal()">
+                                    <i class="fa-solid fa-gear"></i> Thay đổi mục tiêu
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal thiết lập mục tiêu -->
+    <div id="goal-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-bullseye"></i> Thiết lập mục tiêu học hàng ngày</h3>
+                <button class="modal-close" onclick="hideGoalModal()">
+                    <i class="fa-solid fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="goal-input">
+                        <i class="fa-solid fa-book"></i> Số từ muốn học mỗi ngày:
+                    </label>
+                    <input type="number" id="goal-input" min="1" max="1000" value="20" class="form-input">
+                    <small class="form-hint">Chọn từ 1 đến 1000 từ</small>
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="recurring-checkbox" class="checkbox-input">
+                        <span class="checkbox-text">
+                            <i class="fa-solid fa-repeat"></i> Lặp lại mục tiêu này hàng ngày
+                        </span>
+                    </label>
+                    <small class="form-hint">Nếu không chọn, mục tiêu chỉ áp dụng cho hôm nay</small>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button onclick="saveGoal()" class="btn-primary btn-modal">
+                    <i class="fa-solid fa-check"></i> Lưu mục tiêu
+                </button>
+                <button onclick="hideGoalModal()" class="btn-secondary btn-modal">
+                    <i class="fa-solid fa-times"></i> Hủy
+                </button>
+            </div>
+        </div>
+    </div>
+
+   
+    <!-- Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    
+    <!-- Cross-tab Sync Scripts -->
+    <script src="../../assets/js/defaut/sync_validator.js"></script>
+    <script src="../../assets/js/defaut/sync_manager.js"></script>
+    <script src="../../assets/js/defaut/sync_helpers.js"></script>
+    
+    <script src="../../assets/js/defaut/auth_check.js"></script>
+    
+    <!-- Script để load menu và header -->
+    <script src="../../assets/js/user/layout_user.js"></script>
+    <!-- Script dashboard -->
+    <script src="../../assets/js/user/user_Dashboard.js"></script>
+</body>
+
+</html>

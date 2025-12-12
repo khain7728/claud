@@ -1,0 +1,178 @@
+/* Tổng thể */
+#content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 200px);
+    padding: 2rem 0;
+    background-color: #C2E2FA;
+}
+
+/* Khung đăng nhập */
+.login-container {
+    background: #ffffff;
+    padding: 35px 40px;
+    width: 480px; 
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+.login-container h2 {
+    margin: 0 0 10px;
+}
+
+.login-container p {
+    margin-top: 18px;
+    margin-bottom: 18px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Nút đăng nhập MXH */
+.facebook-login-button,
+.google-login-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #fff;
+}
+
+.facebook-login-button i {
+    color: #1877f2;
+}
+
+.google-login-button i {
+    color: #db4437;
+}
+
+/* Dòng chia */
+.divider {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.divider .line-left,
+.divider .line-right {
+    flex: 1;
+    height: 1px;
+    background: #ccc;
+}
+
+.divider span {
+    margin: 0 12px;
+    font-size: 13px;
+    color: #333;
+}
+
+/* Input */
+.input-group label {
+    font-size: 14px;
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    color: #222;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 11px;
+    border-radius: 7px;
+    border: 1px solid #aaa;
+    margin-bottom: 15px;
+    font-size: 14px;
+    box-sizing: border-box; /* Thêm để padding không làm tăng width */
+}
+
+/* Quên mật khẩu */
+.login-container > a {
+    display: inline-block; /* Đổi từ block sang inline-block */
+    text-align: right;
+    font-size: 13px;
+    color: black;
+    text-decoration: none;
+    margin-top: -5px;
+    width: 100%;
+}
+
+.login-container > a:hover {
+    text-decoration: underline;
+}
+
+/* Nút đăng nhập */
+.login-button {
+    width: 100%;
+    background: #4c77c6;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    margin-top: 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background: #3c61a3;
+}
+
+/* Link đăng ký */
+.signup-link {
+    margin-top: 15px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.signup-link a {
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline; /* Đảm bảo link không xuống hàng */
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* Terms checkbox */
+.terms {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 15px;
+    text-align: left;
+}
+
+.terms input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.terms label {
+    font-size: 13px;
+    color: #333;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.terms label a {
+    display: inline;
+    color: #4c77c6;
+    text-decoration: none;
+    text-align: left;
+}
+
+.terms label a:hover {
+    text-decoration: underline;
+}

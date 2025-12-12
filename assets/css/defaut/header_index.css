@@ -1,0 +1,82 @@
+#header_index {
+    display: flex;
+    justify-content: space-between; /* Logo trái, menu phải với khoảng cách tối đa */
+    align-items: center;
+    padding: 0.5rem 2rem;
+    background: #fff;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+}
+
+/* Logo - bên trái */
+#header_index .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0; /* Không cho logo bị co lại */
+}
+
+#header_index .logo svg {
+    width: 2rem;
+    height: 2rem;
+    flex-shrink: 0;
+}
+
+#header_index .logo p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #7BB7EE;
+    margin: 0;
+    line-height: 1;
+}
+
+/* Menu điều hướng - bên phải */
+#header_index #dieu_huong {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; /* Khoảng cách giữa các nút */
+    flex-shrink: 0; /* Không cho menu bị co lại */
+}
+
+/* Mỗi nút menu */
+#header_index #dieu_huong .header {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.875rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#header_index #dieu_huong .header a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #7BB7EE;
+    transition: color 0.2s ease;
+}
+
+/* Active state - FIXED: Active được áp cho thẻ a, không phải .header */
+#header_index #dieu_huong a.nav-link.active {
+    background-color: #7BB7EE;
+    color: #fff !important;
+    padding: 0.5rem 1.5rem;
+    border-radius: 1rem;
+    display: inline-block;
+}
+
+/* Hover effect */
+#header_index #dieu_huong .header:hover {
+    background-color: rgba(123, 183, 238, 0.1);
+}
+
+#header_index #dieu_huong .header:hover a {
+    color: #5B9BD5;
+}
+
+/* Hover không áp dụng khi đã active */
+#header_index #dieu_huong .header:hover a.active {
+    background-color: #7BB7EE;
+    color: #fff;
+}

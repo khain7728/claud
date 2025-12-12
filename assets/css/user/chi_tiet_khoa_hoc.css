@@ -1,0 +1,372 @@
+/* Styles kế thừa từ body.css: *, #tieu_de_trang */
+
+/* Override #main với max-width centered layout */
+/* Styles kế thừa từ body.css: *, #tieu_de_trang */
+
+/* Override #main với max-width centered layout */
+#main {
+    max-width: 62.5rem; /* 1000px */
+    margin: 1.25rem auto; /* 20px */
+    padding: 1.25rem; /* 20px */
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Class để ẩn/hiện các nút */
+#main .an {
+    display: none !important;
+}
+
+/* Hàng 1: Thanh điều hướng trên cùng */
+#main .khung-dieu-huong-tren {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    /* (ĐÃ THAY ĐỔI) Bỏ border xanh */
+    padding: 1rem 1.5rem; /* 16px 24px */
+    margin-bottom: 1.5rem; /* 24px */
+}
+
+#main #btn-tro-ve {
+    background-color: transparent;
+    border: none;
+    color: #000;
+    padding: 0.5rem 1rem; /* 8px 16px */
+    border-radius: 0.5rem; /* 8px */
+    font-size: 1rem; /* 16px - To hơn */
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem; /* 8px */
+}
+#main #btn-tro-ve:hover {
+    opacity: 0.7;
+}
+
+#main #tieu-de-khoa-hoc-chinh {
+    margin: 0;
+    font-size: 1.5rem; /* 24px */
+    color: #333;
+    text-align: center;
+    flex-grow: 1; /* Tự động chiếm không gian */
+}
+
+#main .khung-nut-hanh-dong-tren {
+    display: flex;
+    gap: 0.75rem; /* 12px */
+}
+
+#main .nut-hanh-dong-tren {
+    padding: 0.625rem 1.25rem; /* 10px 20px */
+    border: none;
+    border-radius: 0.5rem; /* 8px */
+    font-size: 0.9375rem; /* 15px */
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem; /* 8px */
+}
+#main .nut-hanh-dong-tren.nut-xanh {
+    background-color: #2D5BFF;
+    color: white;
+}
+#main .nut-hanh-dong-tren.nut-xanh:hover {
+    background-color: #1E47E0;
+    box-shadow: 0 2px 8px rgba(45, 91, 255, 0.3);
+}
+#main .nut-hanh-dong-tren.nut-do {
+    background-color: #FF0000;
+    color: white;
+}
+#main .nut-hanh-dong-tren.nut-do:hover {
+    background-color: #E00000;
+    box-shadow: 0 2px 8px rgba(255, 0, 0, 0.3);
+}
+
+/* Hàng 2: Khung thông số */
+#main .khung-thong-so {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem; /* 24px */
+    margin-bottom: 1.5rem; /* 24px */
+}
+#main .khoi-thong-so {
+    border: 1px solid #E8E8E8; /* Border mỏng và nhạt hơn */
+    border-radius: 0.5rem; /* 8px - Bo tròn ít hơn */
+    padding: 1.25rem 1.5rem; /* 20px 24px - Padding nhỏ hơn */
+    text-align: left; /* Căn trái */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* 8px - Khoảng cách nhỏ hơn */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); /* Shadow nhẹ */
+    background-color: #F5F5F5; /* Nền xám nhạt */
+}
+#main .tieu-de-khoi {
+    font-size: 0.8125rem; /* 13px - Nhỏ hơn */
+    font-weight: 400; /* Không đậm */
+    text-transform: uppercase; /* Chữ hoa */
+    letter-spacing: 0.5px; /* Giãn chữ */
+    color: #999; /* Xám nhạt */
+}
+#main .giatri-khoi {
+    font-size: 2.5rem; /* 40px - To hơn */
+    font-weight: 700;
+    line-height: 1.2;
+    color: #000; /* Đen */
+}
+
+/* Hàng 3: Danh sách từ vựng */
+#main .khung-danh-sach-tu {
+    background-color: #fff;
+    border: 2px solid #E0E0E0; /* Border xám nhẹ */
+    border-radius: 1.25rem; /* 20px - Bo tròn nhiều hơn */
+    padding: 1.5rem; /* 24px */
+}
+#main .tieu-de-danh-sach {
+    font-size: 1.125rem; /* 18px */
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 1.25rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+#main .tieu-de-danh-sach::before {
+    font-size: 1.25rem;
+    color: #5B9BD5;
+}
+#main .khung-chua-danh-sach {
+    max-height: 25rem; /* 400px */
+    overflow-y: auto;
+    border: 0.0625rem solid #eee; /* 1px */
+    border-radius: 0.5rem; /* 8px */
+    padding: 0.25rem; /* 4px */
+}
+
+/* Thẻ từ vựng (do JS tạo ra) */
+#main .the-tu-vung-chi-tiet {
+    background-color: #fff;
+    border: 2px solid #e0e0e0; /* Border xám nhạt */
+    border-radius: 0.75rem; /* 12px */
+    padding: 1.25rem; /* 20px */
+    margin: 0.75rem; /* 12px */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem; /* 16px */
+    position: relative; /* Để đặt số thứ tự */
+    transition: all 0.2s ease;
+}
+#main .the-tu-vung-chi-tiet:hover {
+    border-color: #5B9BD5;
+    box-shadow: 0 2px 8px rgba(91, 155, 213, 0.15);
+}
+/* Số thứ tự ở góc trái */
+#main .the-tu-vung-chi-tiet::before {
+    content: attr(data-index); /* Lấy từ attribute data-index */
+    position: absolute;
+    left: 0.75rem;
+    top: 0.75rem;
+    width: 1.75rem; /* 28px - Nhỏ hơn */
+    height: 1.75rem; /* 28px */
+    background-color: #E8F4FD; /* Xanh rất nhạt */
+    color: #5B9BD5; /* Chữ xanh dương */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem; /* 12px - Nhỏ hơn */
+    font-weight: 600;
+    border: 1px solid #D4E9F8;
+}
+#main .thong-tin-tu-chi-tiet {
+    flex: 1;
+    padding-left: 2.5rem; /* Chừa chỗ cho số ở góc */
+}
+#main .thong-tin-tu-chi-tiet p {
+    margin: 0 0 0.125rem 0; /* 2px */
+}
+#main .tu-vung-chinh {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #000;
+}
+#main .nghia-tu {
+    font-size: 0.9rem;
+    color: #333;
+}
+#main .mota-tu {
+    font-size: 0.8rem;
+    color: #777;
+    font-style: italic;
+}
+
+#main .hanh-dong-tu-chi-tiet {
+    display: flex;
+    gap: 0.75rem; /* 12px */
+}
+#main .nut-icon {
+    background-color: transparent;
+    border: none;
+    width: 2rem; /* 32px */
+    height: 2rem; /* 32px */
+    cursor: pointer;
+    font-size: 1.25rem; /* 20px */
+    color: #555;
+    transition: color 0.3s;
+}
+#main .nut-icon:hover {
+    color: #000;
+}
+#main .nut-icon.nut-xoa-tu:hover {
+    color: #d9534f;
+}
+
+/* 3 nút học tập - đặt trước danh sách từ vựng */
+#main .khung-nut-bam-duoi {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem; /* 12px */
+    margin-bottom: 1.5rem; /* Cách danh sách bên dưới */
+}
+/* Nút học tập - giống nút Trở về */
+#main .nut-hoc-tap {
+    padding: 0.75rem 1.5rem; /* 12px 24px */
+    font-size: 1rem; /* 16px */
+    font-weight: 500;
+    border-radius: 0.5rem; /* 8px */
+    cursor: pointer;
+    border: 1px solid #D0E8F7;
+    background-color: #E8F4FD;
+    color: #5B7FBD;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem; /* 8px - Khoảng cách icon và text */
+}
+#main .nut-hoc-tap:hover {
+    background-color: #D4E9F8;
+    border-color: #B8DAF0;
+}
+#main .nut-hoc-tap:active {
+    transform: scale(0.98);
+}
+
+/* Responsive */
+@media (max-width: 56.25em) { /* 900px */
+    #main .khung-dieu-huong-tren {
+        flex-direction: column;
+        gap: 1rem; /* 16px */
+    }
+    #main #tieu-de-khoa-hoc-chinh {
+        order: -1; /* Đẩy tiêu đề lên đầu */
+    }
+    #main .khung-thong-so {
+        grid-template-columns: 1fr; /* 1 cột */
+    }
+}
+@media (max-width: 43.75em) { /* 700px */
+    #main .khung-nut-bam-duoi {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    #main .the-tu-vung-chi-tiet {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #main .hanh-dong-tu-chi-tiet {
+        margin-top: 0.75rem; /* 12px */
+        width: 100%;
+        justify-content: flex-end;
+    }
+    #main .khung-dieu-huong-tren {
+        padding: 1rem;
+    }
+    #main .khung-nut-hanh-dong-tren {
+        flex-direction: column;
+        width: 100%;
+    }
+    #main .nut-hanh-dong-tren {
+        justify-content: center;
+    }
+}
+
+
+/* Class 'an' chung cho các modal */
+.an {
+    display: none !important; /* Ẩn đi */
+}
+
+#khung-che-mo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.modal-noi-dung {
+    background-color: #fff;
+    border-radius: 0.75rem; /* 12px */
+    border: 0.0625rem solid black; /* 1px black */
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+    padding: 1.5rem; /* 24px */
+    width: 100%;
+    max-width: 31.25rem; /* 500px */
+    text-align: center;
+}
+
+.tieu-de-modal {
+    font-size: 1.5rem; /* 24px */
+    color: #000;
+    margin: 0 0 0.5rem 0;
+}
+.mota-modal {
+    font-size: 1rem;
+    color: #666;
+    margin: 0 0 1.5rem 0;
+}
+
+/* Nút trong Modal */
+.khung-nut-modal {
+    display: flex;
+    justify-content: center; /* Căn giữa 2 nút */
+    gap: 1rem; /* 16px */
+    margin-top: 1rem; /* 16px */
+}
+.nut-modal {
+    padding: 0.75rem 1.5rem; /* 12px 24px */
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 0.5rem; /* 8px */
+    cursor: pointer;
+    border: 0.0625rem solid black; /* 1px black */
+    flex: 1; /* Hai nút bằng nhau */
+}
+.nut-modal.nut-phu { /* "Tiếp tục học" */
+    background-color: #f0f0f0;
+    color: #333;
+}
+/* (ĐÃ THAY ĐỔI) Đổi màu nền xanh */
+.nut-modal.nut-xacnhan { /* "Học lại" */
+    background-color: #7bb7ee;
+    color: white;
+}
+/* (ĐÃ THAY ĐỔI) Đổi màu hover của nút xám */
+.nut-modal.nut-phu:hover { 
+    background-color: #7bb7ee; 
+}
+/* (Giữ nguyên hover) */
+.nut-modal.nut-xacnhan:hover { 
+    background-color: #6a95d1; 
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm từ vựng - Admin</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="../../assets/css/defaut/menu_admin.css">
+    <link rel="stylesheet" href="../../assets/css/defaut/header_admin.css">
+
+    <link rel="stylesheet" href="../../assets/css/admin/themtuvung.css">
+</head>
+
+<body id="app-container">
+
+    <div id="placeholder-menu"></div>
+
+    <div class="main-wrapper">
+        <div id="placeholder-header"></div>
+
+        <div id="content">
+            <div id="main">
+                <div class="khung-tro-ve">
+                    <button id="btn-tro-ve"><i class="fa-solid fa-arrow-left"></i> Trở về</button>
+                </div>
+
+                <h2 class="tieu-de-chinh">Thao tác từ vựng</h2>
+                <p class="tieu-de-phu">Quản lý từ vựng cho khóa học của bạn</p>
+
+                <div class="khung-noi-dung-chinh">
+
+                    <div class="khung-nhap-lieu">
+                        <h3 class_="tieu-de-khung">Từ vựng mới</h3>
+                        <form id="form-them-tu">
+
+                            <div class="hang-form">
+                                <div class="nhom-form">
+                                    <label for="input-tu-tieng-anh">Từ Tiếng Anh</label>
+                                    <input type="text" id="input-tu-tieng-anh" placeholder="Nhập từ tiếng Anh">
+                                </div>
+                                <div class="nhom-form">
+                                    <label for="input-phien-am">Phiên âm</label>
+                                    <input type="text" id="input-phien-am" placeholder="Nhập phiên âm">
+                                </div>
+                            </div>
+
+                            <div class="hang-form">
+                                <div class="nhom-form">
+                                    <label for="input-nghia-tieng-viet">Nghĩa Tiếng Việt</label>
+                                    <input type="text" id="input-nghia-tieng-viet" placeholder="Nhập nghĩa tiếng Việt">
+                                </div>
+                                <div class="nhom-form">
+                                    <label for="input-tu-loai">Từ loại</label>
+                                    <input type="text" id="input-tu-loai" placeholder="vd: (n), (v), (adj)...">
+                                </div>
+                            </div>
+
+                            <div class="nhom-form">
+                                <label for="input-link-phat-am">Link phát âm</label>
+                                <input type="text" id="input-link-phat-am" placeholder="Nhập link .mp3 hoặc để trống">
+                                <span class="text-nho">Hoặc <a href="#" id="link-tai-file-am">file âm thanh lên tại đây</a></span>
+                            </div>
+                            <div class="nhom-form">
+                                <label for="input-mo-ta">Mô tả</label>
+                                <textarea id="input-mo-ta" rows="4" placeholder="Nhập mô tả, ví dụ..."></textarea>
+                            </div>
+
+                            <button type="submit" id="btn-them-tu" class="nut-chinh">Thêm từ</button>
+                        </form>
+                    </div>
+
+                    <div class="khung-danh-sach">
+                        <h3 class="tieu-de-khung">Danh sách từ vựng (<span id="so-luong-tu">0</span>)</h3>
+
+                        <div class="khung-chua-danh-sach" id="danh-sach-tu-vung-container">
+                        </div>
+
+                        <div class="khung-nut-cuoi-trang">
+                            <button id="btn-huy-bo" class="nut-phu">Hủy bỏ</button>
+                            <button id="btn-luu-va-thoat" class="nut-chinh">Lưu và thoát</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <audio id="audio-player-an" style="display: none;"></audio>
+        <!-- Cross-tab Sync Scripts -->
+        <script src="../../assets/js/defaut/sync_validator.js"></script>
+        <script src="../../assets/js/defaut/sync_manager.js"></script>
+        <script src="../../assets/js/defaut/sync_helpers.js"></script>
+        
+        <script src="../../assets/js/defaut/auth_check.js"></script>
+        <script src="../../assets/js/admin/layout_admin.js"></script>
+        <script src="../../assets/js/admin/themtuvung.js"></script>
+</body>
+
+</html>

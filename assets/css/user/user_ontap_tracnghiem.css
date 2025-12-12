@@ -1,0 +1,214 @@
+/* Styles kế thừa từ body.css: *, #main, #tieu_de_trang */
+
+html { font-size: 16px; }
+
+#main {
+    margin: 0 auto;
+    gap: 0.75rem;
+    max-width: 80rem;
+}
+
+/* Custom cho trang trắc nghiệm */
+#tieu_de_trang {
+    color: #2F80ED;
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+}
+#tieu_de_trang p {
+    margin: 0;
+}
+#tieu_de_trang i {
+    background-color: #2F80ED;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.process {
+    width: 100%;
+    height: 1.25rem;
+    background-color: #D0E9FF;
+    border-radius: 0.625rem;
+    border: #2F80ED 0.0625rem solid;
+    overflow: hidden;
+    margin-bottom: 0.75rem;
+    position: relative;
+}
+.process .tongsocauhoi { width:100%; height:100%; }
+.process  .socauhoihientai {
+    display: block;
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg,#2F80ED,#4C9EE3);
+    transition: width 0.5s ease;
+}
+
+#frame_cauhoi #cauhoi {
+    border: #2F80ED 0.0625rem solid;
+    border-radius: 1rem;
+    padding: 0.75rem;
+    margin: 0 auto 0.75rem auto;
+    width: 55%;
+    min-width: 18.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    min-height: 4.5rem;
+    line-height: 1.2;
+    background-color:#F8FCFF;
+}
+
+#frame_cautraloi {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 0.75rem;
+}
+
+.cautraloi {
+    min-height: 4rem;
+    padding: 0.625rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    border: #2F80ED 0.0625rem solid;
+    border-radius: 1rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    background: #ffffff;
+    position: relative;
+    transition: all 0.3s ease;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.cautraloi:hover {
+    background-color: #2F80ED;
+    color: #fff;
+    transform: translateY(-0.25rem);
+    box-shadow: 0 0.5rem 1rem rgba(47,128,237,0.25);
+}
+.cautraloi:active {
+    transform: translateY(0);
+    box-shadow: 0 0.25rem 0.5rem rgba(47,128,237,0.3);
+}
+.cautraloi.correct {
+    background-color: #2F80ED;
+    color:#fff;
+    border-color:#2F80ED;
+    box-shadow: 0 0 0 0.1875rem rgba(47,128,237,0.35);
+}
+.cautraloi.incorrect {
+    background-color: #FF4D4D;
+    color:#fff;
+    border-color:#FF0404;
+    box-shadow: 0 0 0 0.1875rem rgba(255,64,64,0.35);
+}
+.cautraloi.disabled { opacity:0.6; pointer-events:none; }
+
+/* Thanh thao tác ẩn ban đầu */
+#thaotac {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top:1.5rem;
+}
+#thaotac.show { display:flex; }
+
+#thaotac button {
+    font-size: 1.125rem;
+    padding: 0.625rem 1.5rem;
+    font-weight: 600;
+    border-radius: 2rem;
+    border: none;
+    cursor:pointer;
+    transition: all 0.3s ease;
+    display:flex;
+    align-items:center;
+    gap:0.5rem;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+
+button[title="dathuoctunay"] {
+    background-color: #2F80ED;
+    color: white;
+    transition: all 0.3s ease, transform 0.12s ease;
+}
+button[title="dathuoctunay"]:hover { 
+    background-color:#2567c7;
+    transform: translateY(-0.1875rem);
+    box-shadow: 0 0.25rem 0.5rem rgba(47, 128, 237, 0.3);
+}
+button[title="dathuoctunay"]:active { 
+    transform: translateY(0);
+    box-shadow: 0 0.125rem 0.25rem rgba(47, 128, 237, 0.3);
+}
+
+/* State khi đã đánh dấu "Đã thuộc" */
+button[title="dathuoctunay"].marked {
+    background-color: #27AE60 !important;
+    color: white !important;
+}
+
+button[title="quentunay"] {
+    background-color:#ffffff;
+    color: #FF0404;
+    border: #FF0404 0.0625rem solid !important;
+    transition: all 0.3s ease, transform 0.12s ease;
+}
+button[title="quentunay"]:hover { 
+    background-color:#FF0404;
+    color:#fff;
+    transform: translateY(-0.1875rem);
+    box-shadow: 0 0.25rem 0.5rem rgba(255, 4, 4, 0.3);
+}
+button[title="quentunay"]:active { 
+    transform: translateY(0);
+    box-shadow: 0 0.125rem 0.25rem rgba(255, 4, 4, 0.3);
+}
+
+/* State khi đã đánh dấu "Quên" */
+button[title="quentunay"].marked {
+    background-color: #FF0404 !important;
+    color: white !important;
+}
+
+button[title="tieptheo"] {
+    background-color: #A8CAF8;
+    color:#000;
+}
+button[title="tieptheo"]:hover { 
+    background-color:#7BAEF6;
+    transform: translateY(-0.1875rem);
+    box-shadow: 0 0.25rem 0.5rem rgba(168, 202, 248, 0.3);
+}
+button[title="tieptheo"]:active { 
+    transform: translateY(0);
+    box-shadow: 0 0.125rem 0.25rem rgba(168, 202, 248, 0.3);
+}
+
+/* Responsive thu gọn trên màn hình nhỏ */
+@media (max-width: 48rem) { /* 768px */
+    #frame_cauhoi #cauhoi { width: 100%; font-size:2rem; }
+    #frame_cautraloi { gap:1rem; }
+    .cautraloi { font-size:1.25rem; min-height:4.5rem; }
+    #thaotac { flex-wrap:wrap; justify-content:center; }
+    #main { margin-left:1rem; }
+}

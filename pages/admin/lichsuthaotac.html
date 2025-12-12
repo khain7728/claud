@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch sử thao tác - Admin</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="../../assets/css/defaut/menu_admin.css">
+    <link rel="stylesheet" href="../../assets/css/defaut/header_admin.css">
+    <link rel="stylesheet" href="../../assets/css/admin/lichsuthaotac.css">
+</head>
+
+<body id="app-container">
+
+    <div id="placeholder-menu"></div>
+
+    <div id="toast-container"></div>
+
+    <div class="main-wrapper">
+        <div id="placeholder-header"></div>
+
+        <div id="content">
+            <main class="page-content">
+
+                <div class="page-header">
+                    <div class="header-text">
+                        <h1 class="page-title">Lịch sử thao tác</h1>
+                        <p class="page-subtitle">Theo dõi các hành động của Admin trong hệ thống</p>
+                    </div>
+                    <button class="btn-export" id="btnExportCSV">
+                        <i class="fa-solid fa-file-export"></i> Xuất Excel (CSV)
+                    </button>
+                </div>
+
+                <div class="toolbar">
+                    <div class="filter-group search-group">
+                        <div class="search-bar">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" id="searchLogBox" placeholder="Tìm kiếm hành động...">
+                        </div>
+                    </div>
+
+                    <div class="filter-group date-group" style="gap: 8px;">
+                        <select id="quickTimeSelect" class="form-select" style="padding: 8px; border-radius: 6px; border: 1px solid #ddd; outline: none; cursor: pointer;">
+                            <option value="custom">-- Tùy chỉnh --</option>
+                            <option value="today">Hôm nay</option>
+                            <option value="yesterday">Hôm qua</option>
+                            <option value="last_7_days" selected>7 ngày qua</option> <option value="this_month">Tháng này</option>
+                            <option value="all">Tất cả</option>
+                        </select>
+
+                        <div class="custom-date-inputs" style="display: flex; gap: 5px; align-items: center;">
+                            <input type="date" id="filterStartDate" class="date-input">
+                            <span class="separator">-</span>
+                            <input type="date" id="filterEndDate" class="date-input">
+                        </div>
+                    </div>
+                    <div class="table-container">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th class="col-stt">STT</th>
+                                    <th class="col-action">
+                                        Hành động
+                                    </th>
+                                    <th class="col-id">
+                                        ID Đối tượng
+                                    </th>
+                                    <th class="col-admin">
+                                        Người thực hiện
+                                    </th>
+                                    <th class="col-ip">IP Address</th>
+
+                                    <th class="col-time sortable" data-sort="created_at">
+                                        Thời gian <i class="fa-solid fa-sort"></i>
+                                    </th>
+
+                                    <th class="col-ua">Thiết bị / Browser</th>
+                                </tr>
+                            </thead>
+                            <tbody id="log_table_body">
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="pagination" id="pagination"></div>
+            </main>
+            </div>
+        </div>
+
+        <script src="../../assets/js/defaut/auth_check.js"></script>
+        <script src="../../assets/js/admin/layout_admin.js"></script>
+        <script src="../../assets/js/admin/lichsuthaotac.js"></script>
+</body>
+
+</html>

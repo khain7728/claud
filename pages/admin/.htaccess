@@ -1,0 +1,27 @@
+# ==================================================
+# BẢO VỆ TRANG ADMIN - VOCAB PROJECT
+# ==================================================
+# Redirect tất cả request HTML qua index.php để check auth
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /VOCAB/pages/admin/
+    
+    # Không rewrite nếu đã là index.php
+    RewriteCond %{REQUEST_URI} index\.php [NC]
+    RewriteRule ^ - [L]
+    
+    # Redirect tất cả file .html qua index.php
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteCond %{REQUEST_FILENAME} \.html$ [NC]
+    RewriteRule ^(.+\.html)$ index.php?page=$1 [L,QSA]
+    
+    # Nếu truy cập folder /admin/ thì load dashboard
+    RewriteCond %{REQUEST_URI} /admin/?$
+    RewriteRule ^$ index.php?page=trangchu_admin.html [L,QSA]
+</IfModule>
+
+# Ngăn chặn listing directory
+Options -Indexes
+
+

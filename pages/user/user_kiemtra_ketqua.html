@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/defaut/body.css">
+    <link rel="stylesheet" href="../../assets/css/user/user_kiemtra_ketqua.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Kết Quả Kiểm Tra - VOCAB</title>
+</head>
+
+<body>
+    <!-- menu user -->
+    <div id="menu_user"></div>
+
+    <!-- header user -->
+    <div id="header_user"></div>
+
+    <!-- content -->
+    <div id="content">
+        <p id="tieu_de_trang">Bài kiểm tra</p>
+        <div id="main">
+            <div id="chucmung">
+                <p id="thongbaohoanthanh">Bạn đã hoàn thành kiểm tra</p>
+                <p id="khen">(Làm tốt lắm)</p>
+            </div>
+
+            <div id="thongso">
+                <div class="box_thongso">
+                    <p>Câu trả lời đúng</p>
+                    <span id="so_cau_dung">0</span>
+                </div>
+                <div class="box_thongso">
+                    <p>Câu trả lời sai</p>
+                    <span id="so_cau_sai">0</span>
+                </div>
+                <div class="box_thongso">
+                    <p>Tỷ lệ đúng</p>
+                    <span id="ty_le_dung">0%</span>
+                </div>
+            </div>
+
+            <div id="frame_thaotac">
+                <a href="!#">Quay lại khóa học</a>
+                <a href="user_ketquachitiet_kiemtra.html" id="chitietketqua">Chi tiết kết quả</a>
+                <a href="user_hoc_tu_vung.html" id="quaylaikhoahoc">Học lại với flashcard</a>
+            </div>
+        </div>
+    </div>
+    <!-- Cross-tab Sync Scripts -->
+    <script src="../../assets/js/defaut/sync_validator.js"></script>
+    <script src="../../assets/js/defaut/sync_manager.js"></script>
+    <script src="../../assets/js/defaut/sync_helpers.js"></script>
+    
+    <script src="../../assets/js/defaut/auth_check.js"></script>
+    <!-- Script để load menu và header -->
+    <script src="../../assets/js/user/layout_user.js"></script>
+    <script src="../../assets/js/user/user_kiemtra_ketqua.js"></script>
+</body>
+
+</html>

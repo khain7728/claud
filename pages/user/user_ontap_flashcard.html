@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/defaut/body.css">
+    <link rel="stylesheet" href="../../assets/css/user/user_ontap_flashcard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Flashcard Ôn Tập - VOCAB</title>
+</head>
+<body>
+    <!-- menu user -->
+    <div id="menu_user"></div>
+
+    <!-- header user -->
+    <div id="header_user"></div>
+
+    <!-- content -->
+     <div id="content">
+        <div id="tieu_de_trang">
+            <i class="fa-solid fa-book-open"></i>
+            <p>Flashcard</p>
+        </div>
+        <div id="main">
+            <div class="process">
+                <div class="tongsocauhoi">
+                    <div class="socauhoihientai"></div>
+                </div>
+            </div>
+            <!-- flashcard -->
+            <div id="frame_flashcard">
+                <div id="mattruoc" class="flashcard">
+                    <p id="tieude_tuvung">Từ vựng</p>
+                    <span id="noidung_tuvung">Hello</span>
+                    <span id="ipa">/heˈləʊ/</span>
+                    <p id="nhandelatthe" class="nhandelatthe">Nhấn để lật thẻ</p>
+                </div>
+                <div id="matsau" class="flashcard">
+                    <p id="tieude_dinhnghia">Định nghĩa</p>
+                    <span id="dinhnghia">used when meeting someone</span>
+                    <p id="tieude_ynghia">Ý nghĩa</p>
+                    <span id="ynghia">Xin chào</span>
+                    <p id="nhandelatthe" class="nhandelatthe">Nhấn để lật thẻ</p>
+                </div>
+            </div>
+
+            <div id="frame_dieukhien">
+                <button id="quaylai" title="quaylai">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Quay lại
+                </button>
+                <button id="frame_phatam">
+                    <i class="fa-solid fa-volume-high"></i>
+                    <p>Phát âm</p>
+                </button>
+                <button id="dathuoctunay" title="dathuoctunay">Đã thuộc từ này</button>
+                <button id="quentunay" title="quentunay">Quên từ này</button>
+                <button id="tieptheo" title="tieptheo">
+                    Tiếp theo <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    <!-- Script để load menu và header -->
+     <!-- Cross-tab Sync Scripts -->
+     <script src="../../assets/js/defaut/sync_validator.js"></script>
+     <script src="../../assets/js/defaut/sync_manager.js"></script>
+     <script src="../../assets/js/defaut/sync_helpers.js"></script>
+     
+     <script src="../../assets/js/defaut/auth_check.js"></script>
+    <script src="../../assets/js/user/layout_user.js"></script>
+    <script src="../../assets/js/user/user_ontap_flashcard.js"></script>
+</body>
+</html>

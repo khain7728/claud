@@ -1,0 +1,155 @@
+
+#main #chucmung {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 43.75rem;
+    padding: 1.25rem;
+    border: #2F80ED 0.0625rem solid;
+    border-radius: 1.25rem;
+    margin: 1rem auto;
+}
+
+#chucmung #thongbaohoanthanh {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2F80ED;
+}
+#chucmung #khen {
+    margin-bottom: 0;
+    font-size: 1rem;
+    color: #6B7280;
+    font-style: italic;
+}
+
+#main #thongso {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+#thongso .box_thongso {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+    border: #2F80ED 0.0625rem solid;
+    border-radius: 1rem;
+    height: 8rem;
+    padding: 1rem;
+    gap: 0.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#thongso .box_thongso:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0 0.25rem 0.5rem rgba(47, 128, 237, 0.15);
+}
+
+.box_thongso p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.box_thongso span {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+#main #frame_thaotac {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+#frame_thaotac a {
+    cursor: pointer;
+    border: #7BB7EE 0.0625rem solid;
+    border-radius: 2rem;
+    width: 30%;
+    padding: 0.75rem 0;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+    margin-top: 0.75rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+#frame_thaotac a:hover {
+    transform: translateY(-0.1875rem);
+    box-shadow: 0 0.25rem 0.5rem rgba(123, 183, 238, 0.2);
+}
+
+#frame_thaotac #chitietketqua {
+    background-color: #2F80ED;
+    color: white;
+}
+
+#frame_thaotac #chitietketqua:hover {
+    background-color: #2668c7;
+}
+
+#frame_thaotac #quaylaikhoahoc {
+    background-color: #7BB7EE;
+}
+
+#frame_thaotac #quaylaikhoahoc:hover {
+    background-color: #5fa3e0;
+}
+
+/* Responsive */
+@media (max-width: 48rem) {
+    #main #chucmung {
+        padding: 1.25rem;
+        margin: 1.25rem auto;
+    }
+    
+    #chucmung #thongbaohoanthanh {
+        font-size: 1.75rem;
+    }
+    
+    #chucmung #khen {
+        font-size: 1.5rem;
+    }
+    
+    #main #thongso {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    #thongso .box_thongso {
+        width: 80%;
+        height: auto;
+        padding: 1rem;
+    }
+    
+    .box_thongso p {
+        font-size: 1.5rem;
+    }
+    
+    .box_thongso span {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+    
+    #main #frame_thaotac {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    #frame_thaotac a {
+        width: 100%;
+        font-size: 1.5rem;
+        padding: 1rem 0;
+    }
+}

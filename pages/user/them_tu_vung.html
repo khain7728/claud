@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/defaut/body.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/user/them_tu_vung.css">
+    <title>Thêm Từ Vựng - VOCAB</title>
+</head>
+
+<body>
+    <!-- <div id="menu_user"></div>
+    <div id="header_user"></div> -->
+
+    <div id="content">
+        <div id="main">
+            <div class="khung-tro-ve">
+                <button id="btn-tro-ve"><i class="fa-solid fa-arrow-left"></i> Trở về</button>
+            </div>
+
+            <h2 class="tieu-de-chinh">Thao tác từ vựng</h2>
+            <p class="tieu-de-phu">Quản lý từ vựng cho khóa học của bạn</p>
+
+            <div class="khung-noi-dung-chinh">
+
+                <div class="khung-nhap-lieu">
+                    <h3 class="tieu-de-khung">Từ vựng mới</h3>
+                    <form id="form-them-tu">
+                        
+                        <div class="hang-form">
+                            <div class="nhom-form">
+                                <label for="input-tu-tieng-anh">Từ tiếng Anh</label>
+                                <input type="text" id="input-tu-tieng-anh" placeholder="Nhập từ tiếng Anh">
+                            </div>
+                            <div class="nhom-form">
+                                <label for="input-phien-am">Phiên âm</label>
+                                <input type="text" id="input-phien-am" placeholder="Nhập phiên âm">
+                            </div>
+                        </div>
+
+                        <div class="hang-form">
+                            <div class="nhom-form">
+                                <label for="input-nghia-tieng-viet">Nghĩa tiếng Việt</label>
+                                <input type="text" id="input-nghia-tieng-viet" placeholder="Nhập nghĩa tiếng Việt">
+                            </div>
+                            <div class="nhom-form">
+                                <label for="input-tu-loai">Từ loại</label>
+                                <input type="text" id="input-tu-loai" placeholder="vd: (n), (v), (adj)...">
+                            </div>
+                        </div>
+
+                        <div class="nhom-form">
+                            <label for="input-link-phat-am">Link phát âm</label>
+                            <input type="text" id="input-link-phat-am" placeholder="Nhập link .mp3 hoặc tải file lên">
+                            
+                            <span class="text-nho">Hoặc <a href="#" id="link-tai-file-am">tải file âm thanh lên tại đây</a></span>
+                            <input type="file" id="input-file-an" accept=".mp3" style="display: none;">
+                        </div>
+
+                        <div class="nhom-form">
+                            <label for="input-mo-ta">Mô tả</label>
+                            <textarea id="input-mo-ta" rows="4" placeholder="Nhập mô tả, ví dụ..."></textarea>
+                        </div>
+                        
+                        <button type="submit" id="btn-them-tu" class="nut-chinh">Thêm từ</button>
+                    </form>
+                </div>
+
+                <div class="khung-danh-sach">
+                    <h3 class="tieu-de-khung">Danh sách từ vựng (<span id="so-luong-tu">0</span>)</h3>
+                    
+                    <div class="khung-chua-danh-sach" id="danh-sach-tu-vung-container">
+                        </div>
+
+                    <div class="khung-nut-cuoi-trang">
+                        <button id="btn-huy-bo" class="nut-phu">Hủy bỏ</button>
+                        <button id="btn-luu-va-thoat" class="nut-chinh">Lưu và thoát</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <audio id="audio-player-an" style="display: none;"></audio>
+
+    <script src="../../assets/js/defaut/sync_validator.js"></script>
+    <script src="../../assets/js/defaut/sync_manager.js"></script>
+    <script src="../../assets/js/defaut/sync_helpers.js"></script>
+    
+    <script src="../../assets/js/defaut/auth_check.js"></script>
+    <script src="../../assets/js/user/them_tu_vung.js"></script>
+</body>
+</html>

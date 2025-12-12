@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ quản trị - VOCAB</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="../../assets/css/defaut/menu_admin.css">
+    <link rel="stylesheet" href="../../assets/css/defaut/header_admin.css">
+    <link rel="stylesheet" href="../../assets/css/admin/trangchu_admin.css">
+</head>
+
+<body id="app-container">
+
+    <div id="placeholder-menu"></div>
+
+    <div class="main-wrapper">
+
+        <div id="placeholder-header"></div>
+
+        <div id="content">
+            <main class="page-content trangchu-page">
+                <div class="welcome-header">
+                    <h1 class="page-title">Trang chủ</h1>
+                    <p>Chào mừng trở lại, Quản trị viên Admin 👋</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="icon-box blue"><i class="fa-solid fa-users"></i></div>
+                        <div>
+                            <span class="label">Tổng người dùng</span>
+                            <h2 id="stats-total-users">Loading...</h2>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="icon-box green"><i class="fa-solid fa-book"></i></div>
+                        <div>
+                            <span class="label">Khóa học</span>
+                            <h2 id="stats-total-courses">Loading...</h2>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="icon-box orange"><i class="fa-solid fa-bolt"></i></div>
+                        <div>
+                            <span class="label">Hoạt động hôm nay</span>
+                            <h2 id="stats-today-activity">Loading...</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="widget">
+                        <h3>Hoạt động gần đây</h3>
+                        <ul id="list-recent-activities" class="activity-list"></ul>
+                    </div>
+                    <div class="widget">
+                        <h3>Khóa học phổ biến</h3>
+                        <div class="chart-box">
+                            <canvas id="chart-popular-courses"></canvas>
+                        </div>
+                    </div>
+                    <div class="widget full-width">
+                        <h3>Người dùng mới theo tháng</h3>
+                        <div class="chart-box" style="height: 300px;">
+                            <canvas id="chart-new-users"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+
+    <!-- Cross-tab Sync Scripts -->
+    <script src="../../assets/js/defaut/sync_validator.js"></script>
+    <script src="../../assets/js/defaut/sync_manager.js"></script>
+    <script src="../../assets/js/defaut/sync_helpers.js"></script>
+
+    <script src="../../assets/js/defaut/auth_check.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../../assets/js/admin/layout_admin.js"></script>
+    <script src="../../assets/js/admin/trangchu_admin.js"></script>
+</body>
+
+</html>

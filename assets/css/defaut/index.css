@@ -1,0 +1,239 @@
+#content {
+    background-color: #C2E2FA;
+}
+
+/* ===============================
+   SECTION: GIỚI THIỆU
+   =============================== */
+.intro-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 10%;
+  gap: 3rem;
+}
+
+.intro-text {
+  flex: 1;
+}
+
+.intro-text h1 {
+  font-size: 2.25rem;
+  color: #3b3b3b;
+  margin-bottom: 1rem;
+}
+
+.intro-text p {
+  font-size: 1.125rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.intro-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.intro-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem;
+}
+
+/* ===============================
+   CTA BUTTON
+   =============================== */
+.get-started-button {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background: linear-gradient(90deg, #5B9BD5, #7BB7EE);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.125rem;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.get-started-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  background: linear-gradient(90deg, #7BB7EE, #5B9BD5);
+}
+
+
+/* ===============================
+   SECTION: TÍNH NĂNG
+   =============================== */
+.features-section {
+  padding: 4rem 10%;
+  text-align: center;
+}
+
+.features-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.features-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  justify-items: center;
+}
+
+
+.feature-item {
+  background-color: #fff;
+  border-radius: 0.75rem;
+  padding: 2rem 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  color: #7BB7EE;
+  margin-bottom: 1rem;
+}
+
+.feature-item h3 {
+  font-size: 1.25rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.feature-item p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* ===============================
+   SECTION: LỢI ÍCH
+   =============================== */
+.benefits-section {
+  padding: 3rem 10%;
+}
+
+.benefits-section h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.benefits-item {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  background-color: #fff;
+  padding: 1.5rem 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefits-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Hình ảnh bên trái */
+.benefit-image {
+  flex: 0 0 200px; /* Chiều rộng cố định 200px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.benefit-image img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+/* Nội dung bên phải */
+.benefit-content {
+  flex: 1;
+  text-align: left;
+}
+
+.benefit-content h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.benefit-content p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+
+
+@media (max-width: 992px) {
+  .intro-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .intro-image {
+    margin-top: 2rem;
+  }
+
+  .benefits-item {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .benefit-image {
+    flex: 0 0 auto;
+  }
+
+  .benefit-content {
+    text-align: center;
+  }
+
+  .features-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .intro-text h1 {
+    font-size: 1.75rem;
+  }
+  .intro-text p {
+    font-size: 1rem;
+  }
+  .features-section h2,
+  .benefits-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .benefit-content h3 {
+    font-size: 1.25rem;
+  }
+
+  .benefit-content p {
+    font-size: 1rem;
+  }
+
+  .features-container {
+    grid-template-columns: 1fr;
+  }
+}

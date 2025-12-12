@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/defaut/body.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/user/chi_tiet_khoa_hoc.css">
+    <title>Chi Tiết Khóa Học - VOCAB</title>
+</head>
+
+<body>
+    <div id="menu_user"></div>
+    <div id="header_user"></div>
+
+    <div id="content">
+        <div id="main">
+
+            <div class="khung-dieu-huong-tren">
+                <button id="btn-tro-ve"><i class="fa-solid fa-arrow-left"></i> Trở về</button>
+                <h2 id="tieu-de-khoa-hoc-chinh">Đang tải...</h2>
+                
+                <div class="khung-nut-hanh-dong-tren">
+                    <button id="btn-them-tu-vung" class="nut-hanh-dong-tren nut-xanh an">
+                        <i class="fa-solid fa-plus"></i> Thêm từ vựng
+                    </button>
+                    <button id="btn-them-khoa-hoc" class="nut-hanh-dong-tren nut-xanh an">
+                        <i class="fa-solid fa-user-plus"></i> Tham gia
+                    </button>
+                    <button id="btn-xoa-khoa-hoc" class="nut-hanh-dong-tren nut-do an">
+                        <i class="fa-solid fa-trash-can"></i> Xóa khóa học
+                    </button>
+                </div>
+            </div>
+
+            <div class="khung-thong-so">
+                <div class="khoi-thong-so mau-1">
+                    <span class="tieu-de-khoi mau-1">Tác Giả</span>
+                    <span class="giatri-khoi" id="giatri-tac-gia">...</span>
+                </div>
+                <div class="khoi-thong-so mau-2">
+                    <span class="tieu-de-khoi mau-2">Tiến Độ</span>
+                    <span class="giatri-khoi" id="giatri-tien-do">0%</span>
+                </div>
+                <div class="khoi-thong-so mau-3">
+                    <span class="tieu-de-khoi mau-3">Tổng số từ</span>
+                    <span class="giatri-khoi" id="giatri-so-lan-on">0</span>
+                </div>
+            </div>
+
+            <div class="khung-nut-bam-duoi an" id="khung-nut-hoc">
+                <button class="nut-hoc-tap" id="btn-hoc"><i class="fa-solid fa-layer-group"></i> Học Flashcard</button>
+                <button class="nut-hoc-tap" id="btn-on-tap"><i class="fa-solid fa-rotate"></i> Ôn tập</button>
+                <button class="nut-hoc-tap" id="btn-kiem-tra"><i class="fa-solid fa-clipboard-check"></i> Kiểm tra</button>
+            </div>
+
+            <div class="khung-danh-sach-tu">
+                <h3 class="tieu-de-danh-sach">Danh sách từ vựng</h3>
+                <div class="khung-chua-danh-sach" id="danh-sach-tu-vung-container">
+                    <p style="text-align:center; padding: 20px;">Đang tải dữ liệu...</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <audio id="audio-player-an" style="display: none;"></audio>
+    
+    <!-- Cross-tab Sync Scripts -->
+    <script src="../../assets/js/defaut/sync_validator.js"></script>
+    <script src="../../assets/js/defaut/sync_manager.js"></script>
+    <script src="../../assets/js/defaut/sync_helpers.js"></script>
+    
+    <script src="../../assets/js/defaut/auth_check.js"></script>
+    <script src="../../assets/js/user/layout_user.js"></script>
+    <script src="../../assets/js/user/chi_tiet_khoa_hoc.js"></script>
+</body>
+</html>

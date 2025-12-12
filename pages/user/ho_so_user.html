@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/defaut/body.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/user/ho_so_user.css">
+    <title>Hồ Sơ Cá Nhân - VOCAB</title>
+</head>
+<body>
+    <div id="menu_user"></div>
+    <div id="header_user"></div>
+
+    <div id="content">
+        <div id="main">
+            <div class="the-user" id="thongtin-user">
+                <div class="tieu-de-the">
+                    <h2>Thông tin cá nhân</h2>
+                    <button id="btn-chinhsua">Chỉnh sửa</button>
+                </div>
+                <div class="noi-dung-the">
+                    <div class="khung-avt">
+                        <div class="avatar-wrapper" id="wrapper-avt">
+                            <img id="hien-thi-avt" src="" alt="Avatar" class="avatar-img">
+                            <i class="fa-solid fa-user" id="icon-mac-dinh"></i>
+                            <div class="camera-icon"><i class="fa-solid fa-camera"></i></div>
+                        </div>
+                        <input type="file" id="input-file-avt" class="hidden-input" accept="image/*">
+                        <p class="ten-user" id="giatri-ten-user">Đang tải...</p>
+                    </div>
+
+                    <div class="thongtin-chitiet-user">
+                        <div class="icon-"><i class="fa-solid fa-envelope"></i><p><strong>Gmail:</strong> <span id="giatri-email-user">...</span></p></div>
+                        <div class="tieu-su"><p><strong>Tiểu sử:</strong></p><p class="khoi-giatri" id="giatri-tieu-su">...</p></div>
+                        <div class="ngon-ngu-hoc"><p><strong>Ngôn ngữ học:</strong> <span id="giatri-ngonngu">...</span></p></div>
+                        <div class="trinh-do"><p><strong>Trình độ:</strong> <span id="giatri-trinhdo">...</span></p></div>
+                        <div class="icon-lich"><i class="fa-solid fa-calendar-days"></i><p><strong>Ngày tham gia:</strong> <span id="giatri-ngay-tham-gia">...</span></p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="thanh-tich">
+                <h2><i class="fa-solid fa-award"></i> Thành tích</h2>
+                <div id="noidung-thanhtich"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-view-avt" class="modal-view">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="img-modal-full" alt="Full Avatar">
+    </div>
+    
+    <!-- Cross-tab Sync Scripts -->
+    <script src="../../assets/js/defaut/sync_validator.js"></script>
+    <script src="../../assets/js/defaut/sync_manager.js"></script>
+    <script src="../../assets/js/defaut/sync_helpers.js"></script>
+    
+    <script src="../../assets/js/defaut/auth_check.js"></script>
+    <script src="../../assets/js/user/layout_user.js"></script>
+    <script src="../../assets/js/user/ho_so_user.js"></script>
+</body>
+</html>
