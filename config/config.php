@@ -24,7 +24,7 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
 // ========================================
 define('SITE_NAME', 'VOCAB - English Learning');
 define('SITE_URL', 'http://localhost/VOCAB');
-define('BASE_URL', 'http://localhost/VOCAB'); // Alias for SITE_URL
+if (!defined('BASE_URL')) define('BASE_URL', 'http://localhost/VOCAB'); // Alias for SITE_URL
 define('SITE_EMAIL', 'admin@vocab.com');
 
 // ========================================
