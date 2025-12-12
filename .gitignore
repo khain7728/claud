@@ -16,10 +16,12 @@ package-lock.json
 # --- User Uploads ---
 /uploads/*
 !/uploads/.gitkeep
+!/uploads/.htaccess
 
 # --- Logs ---
 /logs/*
 !/logs/.gitkeep
+!/logs/.htaccess
 *.log
 
 # --- IDE & Editor ---
@@ -48,3 +50,76 @@ Thumbs.db
 
 # --- OAuth Credentials (Double Check) ---
 config/oauth_local.php
+
+# ============================================
+# .gitignore cho VOCAB Project
+# ============================================
+
+# Environment variables (QUAN TRỌNG!)
+.env
+.env.local
+.env.production
+
+# Database credentials
+config/database.php.production
+config/oauth.php.production
+
+# Logs
+logs/
+*.log
+error_log
+
+# Upload files (dữ liệu người dùng)
+uploads/
+!uploads/.htaccess
+uploads/documents/*
+uploads/temp/*
+!uploads/documents/.gitkeep
+!uploads/temp/.gitkeep
+
+# Cache
+cache/
+*.cache
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# PHP
+vendor/
+composer.lock
+
+# Backup files
+*.backup
+*.bak
+*.sql.gz
+backup/
+
+# FTP credentials
+.ftpconfig
+sftp-config.json
+
+# Node modules (nếu dùng npm)
+node_modules/
+package-lock.json
+
+# Zip files
+*.zip
+*.tar.gz
+
+# InfinityFree specific
+.htpasswd
+error_log
+.well-known/
