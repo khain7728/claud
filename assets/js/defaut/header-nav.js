@@ -24,7 +24,7 @@
                 link.classList.add('active');
             }
             // Hoặc kiểm tra path đầy đủ
-            else if (href.startsWith('/VOCAB/') && currentPath === href) {
+            else if (href.startsWith('/') && currentPath === href.replace('/VOCAB','')) {
                 link.classList.add('active');
             }
             

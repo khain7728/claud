@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    const API_BASE_URL = 'http://localhost/VOCAB/api';
+    const API_BASE_URL = '/api';
     const urlParams = new URLSearchParams(window.location.search);
     const COURSE_ID = urlParams.get('id');
     const VIEW_ONLY = urlParams.get('view_only') === '1';

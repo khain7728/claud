@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ============================================================
     // 1. CẤU HÌNH
     // ============================================================
-    const API_BASE_URL = 'http://localhost/VOCAB/api'; 
+    const API_BASE_URL = '/api'; 
     const urlParams = new URLSearchParams(window.location.search);
     const USER_ID = localStorage.getItem('user_id'); 
 

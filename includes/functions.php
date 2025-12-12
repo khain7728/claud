@@ -123,7 +123,7 @@ function is_user() {
 function require_login() {
     if (!is_logged_in()) {
         set_message('Vui lòng đăng nhập để tiếp tục!', MSG_WARNING);
-        redirect('/VOCAB/pages/dangnhap.html');
+        redirect('/pages/dangnhap.html');
     }
 }
 
@@ -134,7 +134,7 @@ function require_admin() {
     require_login();
     if (!is_admin()) {
         set_message('Bạn không có quyền truy cập trang này!', MSG_ERROR);
-        redirect('/VOCAB/pages/user/user_Dashboard.html');
+        redirect('/pages/user/user_Dashboard.html');
     }
 }
 
@@ -145,7 +145,7 @@ function require_user() {
     require_login();
     if (!is_user()) {
         set_message('Bạn không có quyền truy cập trang này!', MSG_ERROR);
-        redirect('/VOCAB/index.html');
+        redirect('/index.html');
     }
 }
 
@@ -286,7 +286,7 @@ function redirect($url) {
  * Redirect về trang trước
  */
 function redirect_back() {
-    $referer = $_SERVER['HTTP_REFERER'] ?? '/VOCAB/index.html';
+    $referer = $_SERVER['HTTP_REFERER'] ?? '/index.html';
     redirect($referer);
 }
 

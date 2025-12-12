@@ -24,6 +24,6 @@ session_start();
 set_message('Đăng xuất thành công!', MSG_SUCCESS);
 
 // Redirect về trang đăng nhập
-redirect('/VOCAB/pages/dangnhap.html');
+redirect('/pages/dangnhap.html');
 
 ?>

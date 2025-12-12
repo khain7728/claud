@@ -171,7 +171,7 @@ function setupAdminSync() {
             
             // Logout và redirect về trang đăng nhập
             setTimeout(() => {
-                window.location.href = '/VOCAB/auth/logout.php';
+                window.location.href = '/auth/logout.php';
             }, 2000);
         }
     });

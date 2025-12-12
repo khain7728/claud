@@ -15,7 +15,7 @@ require_once __DIR__ . '/../includes/notification_helper.php';
 // Chỉ chấp nhận POST request
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     set_message('Phương thức không hợp lệ!', MSG_ERROR);
-    redirect('/VOCAB/pages/dangki.html');
+    redirect('/pages/dangki.html');
 }
 
 // Lấy dữ liệu từ form
@@ -88,7 +88,7 @@ if (!$terms_accepted) {
 if (!empty($errors)) {
     $_SESSION['register_errors'] = $errors;
     $_SESSION['register_data'] = ['name' => $name, 'email' => $email];
-    redirect('/VOCAB/pages/dangki.html');
+    redirect('/pages/dangki.html');
 }
 
 // Hash password
@@ -143,14 +143,14 @@ try {
         unset($_SESSION['register_data']);
         
         // Redirect đến trang xác thực email
-        redirect('/VOCAB/auth/verify-email.php');
+        redirect('/auth/verify-email.php');
     } else {
         throw new Exception('Lỗi khi tạo tài khoản: ' . $stmt->error);
     }
 } catch (Exception $e) {
     log_error($e->getMessage());
     set_message('Có lỗi xảy ra khi đăng ký. Vui lòng thử lại!', MSG_ERROR);
-    redirect('/VOCAB/pages/dangki.html');
+    redirect('/pages/dangki.html');
 }
 
 ?>

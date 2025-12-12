@@ -12,6 +12,7 @@ header('Access-Control-Allow-Methods: POST');
 header('Access-Control-Allow-Headers: Content-Type');
 
 require_once '../config/config.php';
+require_once '../includes/log_helper.php';
 require_once '../includes/rate_limiter.php';
 checkApiRateLimit();
 

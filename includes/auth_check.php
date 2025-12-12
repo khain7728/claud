@@ -98,21 +98,21 @@ function check_user_auth() {
     // Kiểm tra session timeout
     if (!check_session_timeout()) {
         log_auth_failure('Session timeout');
-        header('Location: /VOCAB/pages/dangnhap.html?timeout=1');
+        header('Location: /pages/dangnhap.html?timeout=1');
         exit();
     }
     
     // Kiểm tra session security
     if (!validate_session_security()) {
         log_auth_failure('Session hijacking detected', $_SESSION['user_id'] ?? null);
-        header('Location: /VOCAB/pages/dangnhap.html?error=security');
+        header('Location: /pages/dangnhap.html?error=security');
         exit();
     }
     
     // Kiểm tra đăng nhập
     if (!is_logged_in()) {
         log_auth_failure('Not logged in');
-        header('Location: /VOCAB/pages/dangnhap.html');
+        header('Location: /pages/dangnhap.html');
         exit();
     }
     
@@ -123,7 +123,7 @@ function check_user_auth() {
     // Nếu không phải user hoặc admin, từ chối
     if (!is_user() && !is_admin()) {
         log_auth_failure('Invalid role', $_SESSION['user_id'] ?? null);
-        header('Location: /VOCAB/pages/dangnhap.html');
+        header('Location: /pages/dangnhap.html');
         exit();
     }
 }
@@ -135,21 +135,21 @@ function check_admin_auth() {
     // Kiểm tra session timeout
     if (!check_session_timeout()) {
         log_auth_failure('Admin session timeout');
-        header('Location: /VOCAB/pages/dangnhap.html?timeout=1');
+        header('Location: /pages/dangnhap.html?timeout=1');
         exit();
     }
     
     // Kiểm tra session security
     if (!validate_session_security()) {
         log_auth_failure('Admin session hijacking detected', $_SESSION['user_id'] ?? null);
-        header('Location: /VOCAB/pages/dangnhap.html?error=security');
+        header('Location: /pages/dangnhap.html?error=security');
         exit();
     }
     
     // Kiểm tra đăng nhập
     if (!is_logged_in()) {
         log_auth_failure('Admin not logged in');
-        header('Location: /VOCAB/pages/dangnhap.html');
+        header('Location: /pages/dangnhap.html');
         exit();
     }
     
@@ -160,7 +160,7 @@ function check_admin_auth() {
     if (!is_admin()) {
         log_auth_failure('Unauthorized admin access attempt', $_SESSION['user_id'] ?? null);
         // Nếu là user thường, chuyển về dashboard user
-        header('Location: /VOCAB/pages/user/user_Dashboard.html');
+        header('Location: /pages/user/user_Dashboard.html');
         exit();
     }
 }

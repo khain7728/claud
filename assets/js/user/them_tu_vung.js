@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    const API_BASE_URL = 'http://localhost/VOCAB/api';
+    const API_BASE_URL = '/api';
     const urlParams = new URLSearchParams(window.location.search);
     
     // --- [SỬA ĐỔI 1] Cập nhật logic lấy ID để tránh xung đột ---

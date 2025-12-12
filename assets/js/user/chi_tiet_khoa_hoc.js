@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 1. CẤU HÌNH & KHỞI TẠO
     // ============================================================
     
-    const API_BASE_URL = 'http://localhost/VOCAB/api'; 
+    const API_BASE_URL = '/api'; 
     
     const urlParams = new URLSearchParams(window.location.search);
     const COURSE_ID = urlParams.get('id');

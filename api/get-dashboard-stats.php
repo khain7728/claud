@@ -26,6 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 }
 
 require_once '../config/config.php';
+require_once '../includes/log_helper.php';
 
 // Enable error logging for debugging
 error_log("[get-dashboard-stats] Authenticated request");

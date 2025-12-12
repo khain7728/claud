@@ -56,7 +56,7 @@ function getLoginPath() {
  */
 async function verifySessionWithServer() {
     try {
-        const response = await fetch('/VOCAB/api/get-session-user.php', {
+        const response = await fetch('/api/get-session-user.php', {
             cache: 'no-cache'
         });
         const result = await response.json();

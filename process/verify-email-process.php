@@ -9,13 +9,13 @@ require_once __DIR__ . '/../config/config.php';
 // Chỉ chấp nhận POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     set_message('Phương thức không hợp lệ!', MSG_ERROR);
-    redirect('/VOCAB/auth/verify-email.php');
+    redirect('/auth/verify-email.php');
 }
 
 // Kiểm tra có pending verification không
 if (!isset($_SESSION['pending_verification'])) {
     set_message('Không tìm thấy thông tin xác thực. Vui lòng đăng ký lại.', MSG_ERROR);
-    redirect('/VOCAB/pages/dangki.html');
+    redirect('/pages/dangki.html');
 }
 
 $pending = $_SESSION['pending_verification'];
@@ -24,12 +24,12 @@ $verification_code = trim($_POST['verification_code'] ?? '');
 // Validate
 if (empty($verification_code)) {
     set_message('Vui lòng nhập mã xác thực!', MSG_ERROR);
-    redirect('/VOCAB/auth/verify-email.php');
+    redirect('/auth/verify-email.php');
 }
 
 if (strlen($verification_code) !== 6 || !ctype_digit($verification_code)) {
     set_message('Mã xác thực phải là 6 chữ số!', MSG_ERROR);
-    redirect('/VOCAB/auth/verify-email.php');
+    redirect('/auth/verify-email.php');
 }
 
 try {
@@ -41,7 +41,7 @@ try {
     
     if ($result->num_rows === 0) {
         set_message('Mã xác thực không chính xác!', MSG_ERROR);
-        redirect('/VOCAB/auth/verify-email.php');
+        redirect('/auth/verify-email.php');
     }
     
     $user = $result->fetch_assoc();
@@ -50,7 +50,7 @@ try {
     // Kiểm tra mã đã hết hạn chưa
     if (strtotime($user['reset_code_expire']) < time()) {
         set_message('Mã xác thực đã hết hạn! Vui lòng yêu cầu gửi lại.', MSG_ERROR);
-        redirect('/VOCAB/auth/verify-email.php');
+        redirect('/auth/verify-email.php');
     }
     
     // Xác thực thành công - cập nhật database
@@ -78,11 +78,11 @@ try {
     
     // Thông báo thành công và yêu cầu đăng nhập
     set_message('Xác thực email thành công! Vui lòng đăng nhập để tiếp tục.', MSG_SUCCESS);
-    redirect('/VOCAB/pages/dangnhap.html');
+    redirect('/pages/dangnhap.html');
     
 } catch (Exception $e) {
     log_error($e->getMessage());
     set_message('Có lỗi xảy ra. Vui lòng thử lại!', MSG_ERROR);
-    redirect('/VOCAB/auth/verify-email.php');
+    redirect('/auth/verify-email.php');
 }
 ?>

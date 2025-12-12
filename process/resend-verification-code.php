@@ -9,7 +9,7 @@ require_once __DIR__ . '/../config/config.php';
 // Kiểm tra có pending verification không
 if (!isset($_SESSION['pending_verification'])) {
     set_message('Không tìm thấy thông tin xác thực. Vui lòng đăng ký lại.', MSG_ERROR);
-    redirect('/VOCAB/pages/dangki.html');
+    redirect('/pages/dangki.html');
 }
 
 $pending = $_SESSION['pending_verification'];
@@ -23,7 +23,7 @@ try {
     
     if ($result->num_rows === 0) {
         set_message('Không tìm thấy tài khoản hoặc đã được xác thực.', MSG_ERROR);
-        redirect('/VOCAB/pages/dangki.html');
+        redirect('/pages/dangki.html');
     }
     $stmt->close();
     
@@ -58,11 +58,11 @@ try {
     }
     
     set_message('Mã xác thực mới đã được gửi đến email của bạn!', MSG_SUCCESS);
-    redirect('/VOCAB/auth/verify-email.php');
+    redirect('/auth/verify-email.php');
     
 } catch (Exception $e) {
     log_error($e->getMessage());
     set_message('Có lỗi xảy ra khi gửi lại mã. Vui lòng thử lại!', MSG_ERROR);
-    redirect('/VOCAB/auth/verify-email.php');
+    redirect('/auth/verify-email.php');
 }
 ?>

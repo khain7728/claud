@@ -101,7 +101,7 @@
     // Nếu chưa có tên -> Gọi API lấy ngay
     if ((!storedName || storedName === 'null') && userId) {
         try {
-            const response = await fetch(`http://localhost/VOCAB/api/get-user-profile.php?user_id=${userId}`);
+            const response = await fetch(`/api/get-user-profile.php?user_id=${userId}`);
             const result = await response.json();
             if (result.success) {
                 storedName = result.data.user.fullname;

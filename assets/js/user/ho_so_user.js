@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const API_BASE_URL = 'http://localhost/VOCAB/api';
+    const API_BASE_URL = '/api';
     const USER_ID = localStorage.getItem('user_id');
     
     // Link mặc định theo yêu cầu
