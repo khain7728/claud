@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@v4
+        uses: samkirkland/ftp-deploy-action@v4
         with:
           server: ftpupload.net
           username: ${{ secrets.FTP_USERNAME }}
