@@ -10,7 +10,7 @@ require_once __DIR__ . '/../config/oauth.php';
 if (!isset($_GET['state']) || $_GET['state'] !== $_SESSION['facebook_state']) {
     unset($_SESSION['facebook_state']);
     set_message('Lỗi bảo mật. Vui lòng thử lại.', MSG_ERROR);
-    redirect('/VOCAB/pages/dangnhap.html');
+    redirect('/pages/dangnhap.html');
 }
 
 unset($_SESSION['facebook_state']);
@@ -18,7 +18,7 @@ unset($_SESSION['facebook_state']);
 // Kiểm tra có code không
 if (!isset($_GET['code'])) {
     set_message('Đăng nhập Facebook thất bại.', MSG_ERROR);
-    redirect('/VOCAB/pages/dangnhap.html');
+    redirect('/pages/dangnhap.html');
 }
 
 $code = $_GET['code'];
@@ -129,13 +129,13 @@ try {
     // BƯỚC 5: REDIRECT THEO ROLE
     // ========================================
     if ($user['role'] === 'admin') {
-        redirect('/VOCAB/pages/admin/trangchu_admin.html');
+        redirect('/pages/admin/trangchu_admin.html');
     } else {
-        redirect('/VOCAB/pages/user/user_Dashboard.html');
+        redirect('/pages/user/user_Dashboard.html');
     }
 
 } catch (Exception $e) {
     error_log("Facebook login error: " . $e->getMessage());
     set_message('Đăng nhập Facebook thất bại: ' . $e->getMessage(), MSG_ERROR);
-    redirect('/VOCAB/pages/dangnhap.html');
+    redirect('/pages/dangnhap.html');
 }

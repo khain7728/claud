@@ -9,9 +9,9 @@ require_once __DIR__ . '/../config/oauth.php';
 // Nếu đã đăng nhập rồi thì không cần login nữa
 if (is_logged_in()) {
     if (is_admin()) {
-        redirect('/VOCAB/pages/admin/trangchu_admin.html');
+        redirect('/pages/admin/trangchu_admin.html');
     } else {
-        redirect('/VOCAB/pages/user/user_Dashboard.html');
+        redirect('/pages/user/user_Dashboard.html');
     }
 }
 

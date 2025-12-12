@@ -55,7 +55,7 @@ if (!function_exists('env')) {
 // ========================================
 define('FACEBOOK_APP_ID', env('FACEBOOK_APP_ID', 'YOUR_FACEBOOK_APP_ID'));
 define('FACEBOOK_APP_SECRET', env('FACEBOOK_APP_SECRET', 'YOUR_FACEBOOK_APP_SECRET'));
-define('FACEBOOK_REDIRECT_URI', env('FACEBOOK_REDIRECT_URI', 'http://localhost/VOCAB/auth/facebook-callback.php'));
+define('FACEBOOK_REDIRECT_URI', env('FACEBOOK_REDIRECT_URI', 'https://vocab.infinityfreeapp.com/auth/facebook-callback.php'));
 define('FACEBOOK_API_VERSION', env('FACEBOOK_API_VERSION', 'v18.0'));
 
 // ========================================
@@ -63,5 +63,5 @@ define('FACEBOOK_API_VERSION', env('FACEBOOK_API_VERSION', 'v18.0'));
 // ========================================
 define('GOOGLE_CLIENT_ID', env('GOOGLE_CLIENT_ID', ''));
 define('GOOGLE_CLIENT_SECRET', env('GOOGLE_CLIENT_SECRET', ''));
-define('GOOGLE_REDIRECT_URI', env('GOOGLE_REDIRECT_URI', 'http://localhost/VOCAB/auth/google-callback.php'));
+define('GOOGLE_REDIRECT_URI', env('GOOGLE_REDIRECT_URI', 'https://vocab.infinityfreeapp.com/auth/google-callback.php'));
 

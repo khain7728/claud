@@ -8,7 +8,7 @@ require_once __DIR__ . '/../config/config.php';
 // Kiểm tra đã có thông tin pending verification chưa
 if (!isset($_SESSION['pending_verification'])) {
     set_message('Không tìm thấy thông tin xác thực. Vui lòng đăng ký lại.', MSG_ERROR);
-    redirect('/VOCAB/pages/dangki.html');
+    redirect('/pages/dangki.html');
 }
 
 $pending = $_SESSION['pending_verification'];
@@ -116,9 +116,9 @@ $debug_code = $_SESSION['verification_code_debug'] ?? null;
             </form>
 
             <div style="text-align: center;">
-                <a href="/VOCAB/process/resend-verification-code.php" class="resend-link">Gửi lại mã xác thực</a>
+                <a href="/process/resend-verification-code.php" class="resend-link">Gửi lại mã xác thực</a>
                 <br>
-                <a href="/VOCAB/pages/dangki.html" class="resend-link">← Quay lại đăng ký</a>
+                <a href="/pages/dangki.html" class="resend-link">← Quay lại đăng ký</a>
             </div>
         </div>
     </div>

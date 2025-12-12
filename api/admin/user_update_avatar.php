@@ -22,7 +22,7 @@ try {
 
     // 1. Cấu hình thư mục lưu (Tạo folder nếu chưa có)
     // Đường dẫn vật lý trên server
-    $uploadDir = $_SERVER['DOCUMENT_ROOT'] . '/VOCAB/uploads/avatars/'; 
+    $uploadDir = $_SERVER['DOCUMENT_ROOT'] . '/uploads/avatars/'; 
     if (!file_exists($uploadDir)) mkdir($uploadDir, 0777, true);
 
     $fileInfo = pathinfo($_FILES['avatar']['name']);

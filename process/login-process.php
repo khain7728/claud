@@ -80,7 +80,7 @@ try {
     // Kiểm tra trạng thái tài khoản
     if ($user['status'] != STATUS_ACTIVE) {
         set_message('Tài khoản của bạn đã bị vô hiệu hóa!', MSG_ERROR);
-        redirect('/VOCAB/pages/dangnhap.html');
+        redirect('/pages/dangnhap.html');
     }
     
     // Kiểm tra email đã được xác thực chưa
@@ -92,7 +92,7 @@ try {
             'name' => $user['name']
         ];
         set_message('Email của bạn chưa được xác thực. Vui lòng kiểm tra email để lấy mã xác thực.', MSG_WARNING);
-        redirect('/VOCAB/auth/verify-email.php');
+        redirect('/auth/verify-email.php');
             redirect('/auth/verify-email.php');
     }
     
@@ -116,18 +116,18 @@ try {
     // Redirect theo role
     if ($user['role'] === ROLE_ADMIN) {
         set_message('Chào mừng Admin ' . $user['name'] . '!', MSG_SUCCESS);
-        redirect('/VOCAB/pages/admin/trangchu_admin.html');
+        redirect('/pages/admin/trangchu_admin.html');
             redirect('/pages/admin/trangchu_admin.html');
     } else {
         set_message('Đăng nhập thành công! Chào mừng ' . $user['name'] . '!', MSG_SUCCESS);
-        redirect('/VOCAB/pages/user/user_Dashboard.html');
+        redirect('/pages/user/user_Dashboard.html');
             redirect('/pages/user/user_Dashboard.html');
     }
     
 } catch (Exception $e) {
     log_error($e->getMessage());
     set_message('Có lỗi xảy ra khi đăng nhập. Vui lòng thử lại!', MSG_ERROR);
-    redirect('/VOCAB/pages/dangnhap.html');
+    redirect('/pages/dangnhap.html');
         redirect('/pages/dangnhap.html');
 }
 

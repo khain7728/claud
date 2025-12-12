@@ -8,9 +8,9 @@ require_once __DIR__ . '/../config/config.php';
 // Nếu đã đăng nhập, redirect
 if (is_logged_in()) {
     if (is_admin()) {
-        redirect('/VOCAB/pages/admin/trangchu_admin.html');
+        redirect('/pages/admin/trangchu_admin.html');
     } else {
-        redirect('/VOCAB/pages/user/user_Dashboard.html');
+        redirect('/pages/user/user_Dashboard.html');
     }
 }
 
@@ -55,7 +55,7 @@ unset($_SESSION['register_data']);
                 </div>
             <?php endif; ?>
 
-            <form method="POST" action="/VOCAB/process/register-process.php">
+            <form method="POST" action="/process/register-process.php">
                 <div class="input-group">
                     <div class="name">
                         <label for="name">Tên đầy đủ</label>

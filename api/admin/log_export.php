@@ -18,8 +18,8 @@ $config_path = $base_path . '/config/database.php';
 
 // Fallback nếu chạy trên server khác cấu trúc
 if (!file_exists($config_path)) {
-    $config_path = $_SERVER['DOCUMENT_ROOT'] . '/VOCAB/config/database.php';
-    $base_path = $_SERVER['DOCUMENT_ROOT'] . '/VOCAB'; // Cập nhật lại đường dẫn gốc
+    $config_path = $_SERVER['DOCUMENT_ROOT'] . '/config/database.php';
+    $base_path = $_SERVER['DOCUMENT_ROOT']; // Cập nhật lại đường dẫn gốc
 }
 
 if (file_exists($config_path)) {

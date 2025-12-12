@@ -8,9 +8,9 @@ require_once __DIR__ . '/../config/config.php';
 // Nếu đã đăng nhập, redirect theo role
 if (is_logged_in()) {
     if (is_admin()) {
-        redirect('/VOCAB/pages/admin/trangchu_admin.html');
+        redirect('/pages/admin/trangchu_admin.html');
     } else {
-        redirect('/VOCAB/pages/user/user_Dashboard.html');
+        redirect('/pages/user/user_Dashboard.html');
     }
 }
 
@@ -79,7 +79,7 @@ unset($_SESSION['login_email']);
                 </div>
             <?php endif; ?>
 
-            <form method="POST" action="/VOCAB/process/login-process.php">
+            <form method="POST" action="/process/login-process.php">
                 <div class="input-group">
                     <div class="email">
                         <label for="email">Email</label>
