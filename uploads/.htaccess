@@ -1,0 +1,18 @@
+# BẢO VỆ THƯ MỤC UPLOADS
+# Ngăn chặn thực thi PHP trong thư mục này
+# Chỉ cho phép tải file, không cho chạy script
+
+# Ngăn thực thi PHP
+<FilesMatch "\.php$">
+    Order allow,deny
+    Deny from all
+<FilesMatch "\.(php|php3|php4|php5|phtml|pl|py|jsp|asp|sh|cgi)$">
+     Order Deny,Allow
+     Deny from all
+</FilesMatch>
+
+# Chỉ cho phép các loại file an toàn
+<FilesMatch "\.(jpg|jpeg|png|gif|webp|mp3|wav|ogg|pdf|doc|docx)$">
+    Order allow,deny
+    Allow from all
+</FilesMatch>
