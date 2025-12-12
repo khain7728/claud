@@ -30,8 +30,8 @@ try {
 
     $conn->begin_transaction();
 
-    // 1. Tạo khóa học (MẶC ĐỊNH HIDE = 1 ĐỂ TẠO DRAFT)
-    $stmt = $conn->prepare("INSERT INTO course (course_name, description, visibility, create_by, created_at, hide) VALUES (?, ?, ?, ?, NOW(), 1)");
+    // 1. Tạo khóa học (HIDE = 0 để hiện thị ngay)
+    $stmt = $conn->prepare("INSERT INTO course (course_name, description, visibility, create_by, created_at, hide) VALUES (?, ?, ?, ?, NOW(), 0)");
     $stmt->bind_param("sssi", $name, $desc, $status, $admin_id);
     
     if (!$stmt->execute()) throw new Exception("Lỗi DB: " . $stmt->error);
@@ -63,11 +63,11 @@ try {
         }
     }
 
-    if (function_exists('writeAdminLog')) writeAdminLog($conn, $admin_id, "Tạo nháp khóa học: $name", $new_id);
+    if (function_exists('writeAdminLog')) writeAdminLog($conn, $admin_id, "Tạo khóa học: $name", $new_id);
 
     $conn->commit();
     ob_clean();
-    echo json_encode(['status' => 'success', 'message' => "Đã tạo bản nháp. Đang chuyển hướng...", 'data' => ['id' => $new_id]]);
+    echo json_encode(['status' => 'success', 'message' => "Đã tạo khóa học thành công. Đang chuyển hướng...", 'data' => ['id' => $new_id]]);
 
 } catch (Exception $e) {
     if(isset($conn)) $conn->rollback();

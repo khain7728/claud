@@ -74,7 +74,13 @@
         return;
       }
       
-      const result = await response.json();
+      const text = await response.text();
+      let result;
+      try {
+        result = JSON.parse(text);
+      } catch (e) {
+        throw new Error('Server trả về dữ liệu không hợp lệ');
+      }
 
       if (!result.success) {
         throw new Error(result.error || 'Không thể tải thông báo');
@@ -230,7 +236,13 @@
         body: JSON.stringify(body)
       });
 
-      const result = await response.json();
+      const text = await response.text();
+      let result;
+      try {
+        result = JSON.parse(text);
+      } catch (e) {
+        throw new Error('Server trả về dữ liệu không hợp lệ');
+      }
 
       if (!result.success) {
         throw new Error(result.error);
@@ -286,7 +298,13 @@
         body: JSON.stringify(body)
       });
 
-      const result = await response.json();
+      const text = await response.text();
+      let result;
+      try {
+        result = JSON.parse(text);
+      } catch (e) {
+        throw new Error('Server trả về dữ liệu không hợp lệ');
+      }
 
       if (!result.success) {
         throw new Error(result.error);

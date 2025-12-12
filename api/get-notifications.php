@@ -15,11 +15,21 @@ header('Access-Control-Allow-Methods: GET, POST, DELETE');
 
 // Import config (bao gồm database và session)
 require_once '../config/config.php';
+require_once '../includes/auth_check.php';
 
 // Session đã được khởi động trong config.php
 
-// Lấy user_id từ session (tạm thời dùng default nếu chưa login)
-$user_id = $_SESSION['user_id'] ?? 1; // Mặc định user 1 để test
+// Kiểm tra đăng nhập
+if (!isset($_SESSION['user_id'])) {
+    http_response_code(401);
+    echo json_encode([
+        'success' => false,
+        'error' => 'Chưa đăng nhập'
+    ], JSON_UNESCAPED_UNICODE);
+    exit();
+}
+
+$user_id = $_SESSION['user_id'];
 
 // Xác định phương thức HTTP
 $method = $_SERVER['REQUEST_METHOD'];
