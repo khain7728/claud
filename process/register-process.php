@@ -116,7 +116,7 @@ try {
         ];
         
         // Gửi email xác thực
-        require_once __DIR__ . '/../includes/email_helper.php';
+        require_once __DIR__ . '/../includes/simple_mail.php';
         $emailResult = sendVerificationEmail($email, $name, $verification_code);
         
         // Ghi log
