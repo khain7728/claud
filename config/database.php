@@ -13,14 +13,14 @@ if ($isProduction) {
     define('DB_HOST', 'sql211.infinityfree.com'); // Thay bằng host thực tế
     define('DB_USER', 'if0_40652540');        // Thay bằng username của bạn
     define('DB_PASS', 'Quockhain49');            // Thay bằng password của bạn
-    define('DB_NAME', 'if0_40652540');  // Thay bằng tên database
+    define('DB_NAME', 'if0_40652540_english_learning');  // Thay bằng tên database
     if (!defined('BASE_URL')) define('BASE_URL', 'https://vocab.infinityfreeapp.com/');
 } else {
     // ===== DEVELOPMENT (XAMPP) =====
     define('DB_HOST', 'localhost');
     define('DB_USER', 'root');
     define('DB_PASS', '');
-    define('DB_NAME', 'if0_40652540_english_learning');
+    define('DB_NAME', 'english_learning');
     if (!defined('BASE_URL')) define('BASE_URL', 'http://localhost/VOCAB/');
 }
 
