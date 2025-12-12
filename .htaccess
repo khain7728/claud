@@ -5,7 +5,7 @@
 # Bật Rewrite Engine
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteBase /VOCAB/
+    RewriteBase /
     
     # Ngăn chặn truy cập thư mục ẩn
     RewriteRule ^(.*/)?\.(.*)$ - [F,L]
