@@ -292,10 +292,13 @@
         ? { delete_all: true } 
         : { notification_id: id };
 
+      // InfinityFree không hỗ trợ DELETE method, dùng POST thay thế
+      const deleteBody = { ...body, action: 'delete' };
+      
       const response = await fetch(CONFIG.API_URL, {
-        method: 'DELETE',
+        method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body)
+        body: JSON.stringify(deleteBody)
       });
 
       const text = await response.text();
